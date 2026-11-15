@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Atelier Gourmet">
+  <rect width="64" height="64" rx="14" fill="#1d1d1f"/>
+  <!-- cloche -->
+  <path d="M12 40a20 20 0 0 1 40 0z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="17.5" r="2.5" fill="#fff"/>
+  <path d="M9 44h46" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- monograma -->
+  <text x="32" y="36" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="1">AG</text>
+  <path d="M20 52h24" stroke="#aad0f6" stroke-width="2" stroke-linecap="round"/>
+</svg>

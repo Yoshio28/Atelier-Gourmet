@@ -38,6 +38,7 @@
   <meta name="twitter:image" content="https://yoshio28.github.io/Atelier-Gourmet/assets/img/og-image.jpg">
   <meta name="twitter:image:alt" content="Atelier Gourmet, Catering &amp; Food Concept, Hermosillo, Sonora">
 
+  <link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/parallax.css">
@@ -104,7 +105,7 @@
         <a href="#ubicacion">Ubicación</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="btn btn--primary nav__cta" href="https://wa.me/526622445593?text=Hola%20Atelier%20Gourmet%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir</a>
+      <button class="btn btn--primary nav__cta" type="button" data-cart-open aria-controls="cart" aria-expanded="false">Mi pedido <span class="cart-count" data-cart-count>0</span></button>
     </div>
   </header>
 
@@ -167,7 +168,7 @@
       <div class="container">
         <p class="eyebrow">Menú To Go</p>
         <h2 class="heading-lg">Elige, pide y recoge.</h2>
-        <p class="lede">Precios en pesos mexicanos (MXN). Para pedidos y dudas, escríbenos por WhatsApp o llámanos.</p>
+        <p class="lede">Precios en pesos mexicanos (MXN). Agrega platillos a tu pedido y envíalo por WhatsApp.</p>
 
         <nav class="menu-nav" aria-label="Categorías del menú">
           <a href="#canapes">Canapés</a>
@@ -186,11 +187,11 @@
             <p class="caption menu-cat__note">Porciones de 10 piezas</p>
           </div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pincho de Dátil</span><span class="menu-item__price">$280</span></div><p class="menu-item__desc">Dátil con tocino y nuez.</p><p class="menu-item__meta">10 piezas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Brochetas de Prosciutto</span><span class="menu-item__price">$250</span></div><p class="menu-item__desc">Prosciutto, fruta de temporada y mozzarella con reducción de balsámico.</p><p class="menu-item__meta">10 piezas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Tartare de Salmón</span><span class="menu-item__price">$350</span></div><p class="menu-item__desc">Salmón ahumado y toast de pan focaccia.</p><p class="menu-item__meta">10 piezas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Envuelto de Hojaldre</span><span class="menu-item__price">$450</span></div><p class="menu-item__desc">Hojaldre relleno de queso brie y mermelada de durazno.</p><p class="menu-item__meta">10 piezas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Focaccia Italiana Mini</span><span class="menu-item__price">$500</span></div><p class="menu-item__desc">Prosciutto, pesto, mozzarella y tomate.</p><p class="menu-item__meta">10 piezas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pincho de Dátil</span><span class="menu-item__price">$280</span></div><p class="menu-item__desc">Dátil con tocino y nuez.</p><p class="menu-item__meta">10 piezas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pincho-de-datil" data-name="Pincho de Dátil" data-price="280" data-unit="10 piezas" aria-label="Agregar Pincho de Dátil — 10 piezas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Brochetas de Prosciutto</span><span class="menu-item__price">$250</span></div><p class="menu-item__desc">Prosciutto, fruta de temporada y mozzarella con reducción de balsámico.</p><p class="menu-item__meta">10 piezas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="brochetas-de-prosciutto" data-name="Brochetas de Prosciutto" data-price="250" data-unit="10 piezas" aria-label="Agregar Brochetas de Prosciutto — 10 piezas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Tartare de Salmón</span><span class="menu-item__price">$350</span></div><p class="menu-item__desc">Salmón ahumado y toast de pan focaccia.</p><p class="menu-item__meta">10 piezas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="tartare-de-salmon" data-name="Tartare de Salmón" data-price="350" data-unit="10 piezas" aria-label="Agregar Tartare de Salmón — 10 piezas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Envuelto de Hojaldre</span><span class="menu-item__price">$450</span></div><p class="menu-item__desc">Hojaldre relleno de queso brie y mermelada de durazno.</p><p class="menu-item__meta">10 piezas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="envuelto-de-hojaldre" data-name="Envuelto de Hojaldre" data-price="450" data-unit="10 piezas" aria-label="Agregar Envuelto de Hojaldre — 10 piezas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Focaccia Italiana Mini</span><span class="menu-item__price">$500</span></div><p class="menu-item__desc">Prosciutto, pesto, mozzarella y tomate.</p><p class="menu-item__meta">10 piezas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="focaccia-italiana-mini" data-name="Focaccia Italiana Mini" data-price="500" data-unit="10 piezas" aria-label="Agregar Focaccia Italiana Mini — 10 piezas al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -198,11 +199,11 @@
         <section id="principales" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Principales</h3></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Penne con Short Rib</span><span class="menu-item__price">$320</span></div><p class="menu-item__desc">Pasta penne con estofado de short rib al vino tinto y tomates cherry.</p><p class="menu-item__meta">Por persona</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Lasaña Blanca de Hongos</span><span class="menu-item__price">$1,600</span></div><p class="menu-item__desc">Lasaña blanca con hongos y ajo confitado.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Lasaña Boloñesa Tradicional</span><span class="menu-item__price">$1,600</span></div><p class="menu-item__desc">Lasaña boloñesa preparada con ingredientes tradicionales.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Chamorros a los Tres Chiles</span><span class="menu-item__price">$310</span></div><p class="menu-item__desc">Chamorros bañados en salsa de tres chiles.</p><p class="menu-item__meta">Por persona</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Filete de Cabrería</span><span class="menu-item__price">$2,800</span></div><p class="menu-item__desc">Filete de cabrería flameado al coñac con salsa cremosa de hongos.</p><p class="menu-item__meta">8 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Penne con Short Rib</span><span class="menu-item__price">$320</span></div><p class="menu-item__desc">Pasta penne con estofado de short rib al vino tinto y tomates cherry.</p><p class="menu-item__meta">Por persona</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pasta-penne-con-short-rib" data-name="Pasta Penne con Short Rib" data-price="320" data-unit="por persona" aria-label="Agregar Pasta Penne con Short Rib — por persona al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Lasaña Blanca de Hongos</span><span class="menu-item__price">$1,600</span></div><p class="menu-item__desc">Lasaña blanca con hongos y ajo confitado.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="lasana-blanca-de-hongos" data-name="Lasaña Blanca de Hongos" data-price="1600" data-unit="10 personas" aria-label="Agregar Lasaña Blanca de Hongos — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Lasaña Boloñesa Tradicional</span><span class="menu-item__price">$1,600</span></div><p class="menu-item__desc">Lasaña boloñesa preparada con ingredientes tradicionales.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="lasana-bolonesa-tradicional" data-name="Lasaña Boloñesa Tradicional" data-price="1600" data-unit="10 personas" aria-label="Agregar Lasaña Boloñesa Tradicional — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Chamorros a los Tres Chiles</span><span class="menu-item__price">$310</span></div><p class="menu-item__desc">Chamorros bañados en salsa de tres chiles.</p><p class="menu-item__meta">Por persona</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="chamorros-a-los-tres-chiles" data-name="Chamorros a los Tres Chiles" data-price="310" data-unit="por persona" aria-label="Agregar Chamorros a los Tres Chiles — por persona al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Filete de Cabrería</span><span class="menu-item__price">$2,800</span></div><p class="menu-item__desc">Filete de cabrería flameado al coñac con salsa cremosa de hongos.</p><p class="menu-item__meta">8 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="filete-de-cabreria" data-name="Filete de Cabrería" data-price="2800" data-unit="8 personas" aria-label="Agregar Filete de Cabrería — 8 personas al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -210,11 +211,11 @@
         <section id="sides" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Sides</h3><p class="caption menu-cat__note">Guarniciones</p></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Fettuccine</span><span class="menu-item__price">$750</span></div><p class="menu-item__desc">Pasta fettuccine con tomate deshidratado en casa y aceitunas negras.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Puré de Papa Trufado</span><span class="menu-item__price">$800</span></div><p class="menu-item__desc">Puré de papa cremoso con aceite de trufa.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Gnocchis Carbonara</span><span class="menu-item__price">$850</span></div><p class="menu-item__desc">Gnocchis estilo carbonara trufados.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Spicy Vodka</span><span class="menu-item__price">$850</span></div><p class="menu-item__desc">Pasta en salsa cremosa picante al vodka.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta de Orzo Fría</span><span class="menu-item__price">$950</span></div><p class="menu-item__desc">Orzo frío con espinaca, alcachofa, parmesano y tocino crujiente glaseado con maple.</p><p class="menu-item__meta">10 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Fettuccine</span><span class="menu-item__price">$750</span></div><p class="menu-item__desc">Pasta fettuccine con tomate deshidratado en casa y aceitunas negras.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pasta-fettuccine" data-name="Pasta Fettuccine" data-price="750" data-unit="10 personas" aria-label="Agregar Pasta Fettuccine — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Puré de Papa Trufado</span><span class="menu-item__price">$800</span></div><p class="menu-item__desc">Puré de papa cremoso con aceite de trufa.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pure-de-papa-trufado" data-name="Puré de Papa Trufado" data-price="800" data-unit="10 personas" aria-label="Agregar Puré de Papa Trufado — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Gnocchis Carbonara</span><span class="menu-item__price">$850</span></div><p class="menu-item__desc">Gnocchis estilo carbonara trufados.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="gnocchis-carbonara" data-name="Gnocchis Carbonara" data-price="850" data-unit="10 personas" aria-label="Agregar Gnocchis Carbonara — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta Spicy Vodka</span><span class="menu-item__price">$850</span></div><p class="menu-item__desc">Pasta en salsa cremosa picante al vodka.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pasta-spicy-vodka" data-name="Pasta Spicy Vodka" data-price="850" data-unit="10 personas" aria-label="Agregar Pasta Spicy Vodka — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pasta de Orzo Fría</span><span class="menu-item__price">$950</span></div><p class="menu-item__desc">Orzo frío con espinaca, alcachofa, parmesano y tocino crujiente glaseado con maple.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pasta-de-orzo-fria" data-name="Pasta de Orzo Fría" data-price="950" data-unit="10 personas" aria-label="Agregar Pasta de Orzo Fría — 10 personas al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -222,9 +223,9 @@
         <section id="ensaladas" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Ensaladas</h3></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada de Espinacas</span><span class="menu-item__price">$580</span></div><p class="menu-item__desc">Espinacas, queso feta, nueces garapiñadas, arándanos y vinagreta mediterránea.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada de Betabel</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Betabel tipo carpaccio, piñones salteados, queso de cabra y aderezo de mostaza.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada Asiática</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Col morada, cacahuate, cilantro, ajonjolí y chile jalapeño.</p><p class="menu-item__meta">10 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada de Espinacas</span><span class="menu-item__price">$580</span></div><p class="menu-item__desc">Espinacas, queso feta, nueces garapiñadas, arándanos y vinagreta mediterránea.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="ensalada-de-espinacas" data-name="Ensalada de Espinacas" data-price="580" data-unit="10 personas" aria-label="Agregar Ensalada de Espinacas — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada de Betabel</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Betabel tipo carpaccio, piñones salteados, queso de cabra y aderezo de mostaza.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="ensalada-de-betabel" data-name="Ensalada de Betabel" data-price="650" data-unit="10 personas" aria-label="Agregar Ensalada de Betabel — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ensalada Asiática</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Col morada, cacahuate, cilantro, ajonjolí y chile jalapeño.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="ensalada-asiatica" data-name="Ensalada Asiática" data-price="650" data-unit="10 personas" aria-label="Agregar Ensalada Asiática — 10 personas al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -232,9 +233,9 @@
         <section id="combos" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Combos</h3><p class="caption menu-cat__note">Pedido mínimo 10 personas</p></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Combo Pastrami</span><span class="menu-item__price">$240</span></div><p class="menu-item__desc">Medio sándwich de pastrami y sopa de tomate.</p><p class="menu-item__meta">Por persona</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Combo Pulled Pork</span><span class="menu-item__price">$250</span></div><p class="menu-item__desc">Sándwich de pulled pork con ensalada de col y mac and cheese con tocino de la casa.</p><p class="menu-item__meta">Por persona</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mini Torta Ahogada</span><span class="menu-item__price">$165</span></div><p class="menu-item__desc">Mini torta ahogada con ahogo tradicional, chile y cebolla morada.</p><p class="menu-item__meta">Por persona</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Combo Pastrami</span><span class="menu-item__price">$240</span></div><p class="menu-item__desc">Medio sándwich de pastrami y sopa de tomate.</p><p class="menu-item__meta">Por persona</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="combo-pastrami" data-name="Combo Pastrami" data-price="240" data-unit="por persona" data-min="10" aria-label="Agregar Combo Pastrami — por persona al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Combo Pulled Pork</span><span class="menu-item__price">$250</span></div><p class="menu-item__desc">Sándwich de pulled pork con ensalada de col y mac and cheese con tocino de la casa.</p><p class="menu-item__meta">Por persona</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="combo-pulled-pork" data-name="Combo Pulled Pork" data-price="250" data-unit="por persona" data-min="10" aria-label="Agregar Combo Pulled Pork — por persona al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mini Torta Ahogada</span><span class="menu-item__price">$165</span></div><p class="menu-item__desc">Mini torta ahogada con ahogo tradicional, chile y cebolla morada.</p><p class="menu-item__meta">Por persona</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="mini-torta-ahogada" data-name="Mini Torta Ahogada" data-price="165" data-unit="por persona" data-min="10" aria-label="Agregar Mini Torta Ahogada — por persona al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -242,12 +243,12 @@
         <section id="brunch" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Brunch To Go</h3></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Croissant de Jamón de Pavo</span><span class="menu-item__price">$1,500</span></div><p class="menu-item__desc">Croissant con jamón de pavo, queso gouda, germinado de trigo y mayonesa macha.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Bagel de Salmón Ahumado</span><span class="menu-item__price">$1,850</span></div><p class="menu-item__desc">Bagel con salmón ahumado, queso crema y alcaparras.</p><p class="menu-item__meta">10 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Croissant de Jamón de Pavo</span><span class="menu-item__price">$1,500</span></div><p class="menu-item__desc">Croissant con jamón de pavo, queso gouda, germinado de trigo y mayonesa macha.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="croissant-de-jamon-de-pavo" data-name="Croissant de Jamón de Pavo" data-price="1500" data-unit="10 personas" aria-label="Agregar Croissant de Jamón de Pavo — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Bagel de Salmón Ahumado</span><span class="menu-item__price">$1,850</span></div><p class="menu-item__desc">Bagel con salmón ahumado, queso crema y alcaparras.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="bagel-de-salmon-ahumado" data-name="Bagel de Salmón Ahumado" data-price="1850" data-unit="10 personas" aria-label="Agregar Bagel de Salmón Ahumado — 10 personas al pedido">Agregar</button></div></li>
             <!-- PENDIENTE: rendimiento sin confirmar -->
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Croissant de Burrata</span><span class="menu-item__price">$1,700</span></div><p class="menu-item__desc">Croissant con queso burrata, pesto y tomate.</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Vasitos de Yogurt Griego</span><span class="menu-item__price">$900</span></div><p class="menu-item__desc">Yogurt griego con frutos rojos y granola.</p><p class="menu-item__meta">10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Tamal Perdido</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Tamal perdido relleno de carne con chile y crema poblana.</p><p class="menu-item__meta">8 a 10 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Croissant de Burrata</span><span class="menu-item__price">$1,700</span></div><p class="menu-item__desc">Croissant con queso burrata, pesto y tomate.</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="croissant-de-burrata" data-name="Croissant de Burrata" data-price="1700" data-unit="" aria-label="Agregar Croissant de Burrata al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Vasitos de Yogurt Griego</span><span class="menu-item__price">$900</span></div><p class="menu-item__desc">Yogurt griego con frutos rojos y granola.</p><p class="menu-item__meta">10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="vasitos-de-yogurt-griego" data-name="Vasitos de Yogurt Griego" data-price="900" data-unit="10 personas" aria-label="Agregar Vasitos de Yogurt Griego — 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Tamal Perdido</span><span class="menu-item__price">$650</span></div><p class="menu-item__desc">Tamal perdido relleno de carne con chile y crema poblana.</p><p class="menu-item__meta">8 a 10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="tamal-perdido" data-name="Tamal Perdido" data-price="650" data-unit="8 a 10 personas" aria-label="Agregar Tamal Perdido — 8 a 10 personas al pedido">Agregar</button></div></li>
           </ul>
         </section>
 
@@ -255,17 +256,17 @@
         <section id="postres" class="menu-cat">
           <div class="menu-cat__head"><h3 class="menu-cat__title">Postres</h3></div>
           <ul class="menu-list">
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheesecake de Jamoncillo</span><span class="menu-item__price">$350</span></div><p class="menu-item__desc">Pastel de queso sabor jamoncillo.</p><p class="menu-item__meta">8 a 10 personas</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheesecake de Lotus</span><span class="menu-item__price">Desde $480</span></div><p class="menu-item__desc">Pastel de queso con galleta Lotus Biscoff.</p><p class="menu-item__meta">Chico $480 · 6 personas &nbsp;|&nbsp; Grande $650 · 10 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheesecake de Jamoncillo</span><span class="menu-item__price">$350</span></div><p class="menu-item__desc">Pastel de queso sabor jamoncillo.</p><p class="menu-item__meta">8 a 10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="cheesecake-de-jamoncillo" data-name="Cheesecake de Jamoncillo" data-price="350" data-unit="8 a 10 personas" aria-label="Agregar Cheesecake de Jamoncillo — 8 a 10 personas al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheesecake de Lotus</span><span class="menu-item__price">Desde $480</span></div><p class="menu-item__desc">Pastel de queso con galleta Lotus Biscoff.</p><p class="menu-item__meta">Chico $480 · 6 personas &nbsp;|&nbsp; Grande $650 · 10 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="cheesecake-de-lotus-chico" data-name="Cheesecake de Lotus (Chico)" data-price="480" data-unit="6 personas" aria-label="Agregar Cheesecake de Lotus (Chico) — 6 personas al pedido">+ Chico</button><button class="add-btn" type="button" data-add data-id="cheesecake-de-lotus-grande" data-name="Cheesecake de Lotus (Grande)" data-price="650" data-unit="10 personas" aria-label="Agregar Cheesecake de Lotus (Grande) — 10 personas al pedido">+ Grande</button></div></li>
             <!-- PENDIENTE: rendimiento sin confirmar -->
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Panqué de Zanahoria</span><span class="menu-item__price">$290</span></div><p class="menu-item__desc">Panqué tradicional de zanahoria.</p></li>
-            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pastel de Pistache</span><span class="menu-item__price">Desde $420</span></div><p class="menu-item__desc">Pastel sabor pistache.</p><p class="menu-item__meta">Chico $420 · 6 personas &nbsp;|&nbsp; Grande $690 · 15 personas</p></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Panqué de Zanahoria</span><span class="menu-item__price">$290</span></div><p class="menu-item__desc">Panqué tradicional de zanahoria.</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="panque-de-zanahoria" data-name="Panqué de Zanahoria" data-price="290" data-unit="" aria-label="Agregar Panqué de Zanahoria al pedido">Agregar</button></div></li>
+            <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Pastel de Pistache</span><span class="menu-item__price">Desde $420</span></div><p class="menu-item__desc">Pastel sabor pistache.</p><p class="menu-item__meta">Chico $420 · 6 personas &nbsp;|&nbsp; Grande $690 · 15 personas</p><div class="add-row"><button class="add-btn" type="button" data-add data-id="pastel-de-pistache-chico" data-name="Pastel de Pistache (Chico)" data-price="420" data-unit="6 personas" aria-label="Agregar Pastel de Pistache (Chico) — 6 personas al pedido">+ Chico</button><button class="add-btn" type="button" data-add data-id="pastel-de-pistache-grande" data-name="Pastel de Pistache (Grande)" data-price="690" data-unit="15 personas" aria-label="Agregar Pastel de Pistache (Grande) — 15 personas al pedido">+ Grande</button></div></li>
           </ul>
         </section>
 
         <div class="menu-cta">
           <div class="btn-pair">
-            <a class="btn btn--primary" href="https://wa.me/526622445593?text=Hola%20Atelier%20Gourmet%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener">Hacer un pedido</a>
+            <button class="btn btn--primary" type="button" data-cart-open aria-controls="cart" aria-expanded="false">Ver mi pedido</button>
             <a class="btn btn--outline" href="https://wa.me/526622445593?text=Hola%20Atelier%20Gourmet%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20su%20men%C3%BA." target="_blank" rel="noopener">Hacer una consulta</a>
           </div>
         </div>
@@ -325,6 +326,11 @@
           <strong>Atelier Gourmet</strong>
           Bv. Ignacio Soto 27, Periodista,<br>83156 Hermosillo, Son.
         </address>
+        <div class="map">
+          <iframe title="Mapa de ubicación de Atelier Gourmet en Bv. Ignacio Soto 27, Hermosillo"
+                  src="https://www.google.com/maps?q=Atelier%20Gourmet%2C%20Bv.%20Ignacio%20Soto%2027%2C%20Periodista%2C%2083156%20Hermosillo%2C%20Son.&amp;hl=es&amp;z=16&amp;output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
         <div class="btn-pair">
           <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bv.%20Ignacio%20Soto%2027%2C%20Periodista%2C%2083156%20Hermosillo%2C%20Son." target="_blank" rel="noopener">Cómo llegar</a>
           <a class="btn btn--outline" href="tel:+526622445593">Llamar al 662 244 5593</a>
@@ -381,11 +387,42 @@
   <!-- Barra de acciones rápidas (solo móvil) -->
   <nav class="mobile-bar" aria-label="Acciones rápidas">
     <a href="tel:+526622445593">Llamar</a>
-    <a class="mobile-bar__primary" href="https://wa.me/526622445593?text=Hola%20Atelier%20Gourmet%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp</a>
+    <button class="mobile-bar__primary" type="button" data-cart-open aria-controls="cart" aria-expanded="false">Mi pedido <span class="cart-count" data-cart-count>0</span></button>
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bv.%20Ignacio%20Soto%2027%2C%20Periodista%2C%2083156%20Hermosillo%2C%20Son." target="_blank" rel="noopener">Cómo llegar</a>
   </nav>
 
+  <!-- Carrito lateral -->
+  <div class="cart-overlay" data-cart-close hidden></div>
+  <aside id="cart" class="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <header class="cart__head">
+      <h2 id="cart-title" class="cart__title">Mi pedido</h2>
+      <button class="cart__close" type="button" data-cart-close aria-label="Cerrar pedido">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <div class="cart__body">
+      <p class="cart__empty" data-cart-empty>Aún no agregas platillos. Explora el menú y toca “Agregar”.</p>
+      <ul class="cart__list" data-cart-list></ul>
+      <form class="cart__form" data-cart-form hidden>
+        <label>Nombre<input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre"></label>
+        <div class="cart__row">
+          <label>Fecha de recolección<input name="fecha" type="date"></label>
+          <label>Hora<input name="hora" type="time"></label>
+        </div>
+        <label>Comentarios<textarea name="comentarios" rows="2" placeholder="Alergias, indicaciones, etc."></textarea></label>
+      </form>
+    </div>
+    <footer class="cart__foot" data-cart-foot hidden>
+      <div class="cart__total"><span>Total estimado</span><strong data-cart-total>$0</strong></div>
+      <p class="caption">Precios en MXN. Atelier Gourmet confirmará tu pedido por WhatsApp.</p>
+      <a class="btn btn--primary cart__send" data-cart-send href="https://wa.me/526622445593" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+      <button class="cart__clear" type="button" data-cart-clear>Vaciar pedido</button>
+    </footer>
+  </aside>
+  <p class="visually-hidden" aria-live="polite" data-cart-live></p>
+
   <script src="js/parallax.js" defer></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

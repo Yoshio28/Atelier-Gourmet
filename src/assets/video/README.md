@@ -1,5 +1,7 @@
-# Assets de video del hero
+# Video del hero
 
-Archivos actuales (loop procedural provisional, 1920×1080, 10 s, 24 fps, sin audio):
-- `hero-video.webm` y `hero-video.mp4`: 720p, 6–10 s en loop, sin audio, idealmente < 2 MB cada uno.
-- `poster.jpg`: primer fotograma optimizado, < 150 KB.
+Loop procedural (render por código, no IA): mesa a la luz de velas, vapor sobre un plato, paneo lento.
+1920×1080 (render 960×540 + escalado lanczos), 10 s, 24 fps, sin audio, periódico (loop perfecto).
+- `hero-video.webm` (VP9) · `hero-video.mp4` (H.264, faststart) · `poster.jpg` (primer fotograma)
+
+Para reemplazarlo por video generado con IA, conserva los mismos nombres de archivo.

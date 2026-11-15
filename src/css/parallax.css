@@ -1,9 +1,14 @@
-/* Capas de movimiento. El JS solo escribe transform/opacity (propiedades de compositor). */
+/* Movimiento. El JS solo escribe transform/opacity (propiedades de compositor). */
 [data-parallax] { will-change: transform; backface-visibility: hidden; }
 
 /* Accesibilidad: sin movimiento si el usuario lo pide */
 @media (prefers-reduced-motion: reduce) {
   [data-parallax] { transform: none !important; opacity: 1 !important; will-change: auto; }
-  .hero__video, .hero__scrim { transition: none; }
+  .hero__video { transition: none; }
   html { scroll-behavior: auto; }
+  .marquee { overflow-x: auto; }
+  .marquee__track { animation: none; }
+  .marquee__track[aria-hidden="true"] { display: none; }
+  .cart, .cart-overlay, .btn, .nav { transition: none; }
+  .cart-count.bump { animation: none; }
 }

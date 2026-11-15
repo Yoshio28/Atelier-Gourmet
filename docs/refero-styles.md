@@ -1,68 +1,57 @@
-# Apple (España) — Style Reference
-> Museum gallery in soft daylight — the gallery is a single, immersive, weightless white room where each product is spotlit against a faintly tinted wall.
+# Amrit Palace — Style Reference
+> spiced parchment gallery — a candlelit beige wall holding sparse saffron punctuation beneath breath-soft serif headlines.
 
 **Theme:** light
 
 Source measurements are normalized; roles and recommendations are interpreted. Font summary lists are independent, not paired by position. HTML examples are reconstructions, not source components.
 
-Apple (España) operates on a gallery principle: the product is the hero, the page is the pedestal. The system rests on a near-white canvas (#f5f5f7) that reads as infinite light, interrupted only by soft gradient washes per product section (pale blue, pale gray) that visually separate campaigns without resorting to borders. Typography is restrained, centered, and almost conversational — weight 600 headlines at 40-56px paired with weight 400 subheads create a quiet authority. The only chromatic color is a vivid blue (#0071e3) used exclusively for the filled primary action button; everything else is monochrome. Components are minimal: a 44px nav bar, pill-shaped buttons (980px radius), text links, and large product imagery that floats on the canvas with no card or shadow treatment.
+Amrit Palace treats the screen like a curated dining room: a warm beige parchment canvas (#d8cbb8) carries the entire interface, accented only by a single saffron-orange moment (#d49653) and grounded by deep warm-black type (#2c2c2c). Typography carries the luxury — whisper-weight 300 headlines reaching 115px in a serif display face, paired with confident 500-weight sans-serif for navigation, buttons, and body, set uppercase with tight negative tracking. Geometry is deliberately sharp: zero border-radius on cards, 1px hairline borders dividing sections like editorial column rules, 3px on interactive elements. Full-bleed atmospheric photography with dark overlays bookends the page, while the lower half unfolds as a wide editorial spread on the warm canvas.
 
 ## Tokens — Colors
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Fog White | `#f5f5f7` | `--color-fog-white` | Dominant page canvas, section backgrounds, footer |
-| Pure White | `#ffffff` | `--color-pure-white` | Nav background, button text, elevated surface |
-| Obsidian | `#1d1d1f` | `--color-obsidian` | Primary headline and body text — the only true dark for editorial content |
-| Carbon | `#000000` | `--color-carbon` | Nav glyphs, link underlines, dark text on light surfaces |
-| Pewter | `#707070` | `--color-pewter` | Secondary body text, footer copy, muted helper text |
-| Slate | `#505050` | `--color-slate` | Tertiary body text and subdued link states |
-| Graphite | `#474747` | `--color-graphite` | Nav and link text at rest — sits between body text and pure black |
-| Iron | `#333333` | `--color-iron` | Nav icons (fill) and button text — the dominant dark accent in chrome |
-| Silver | `#858585` | `--color-silver` | Icon strokes, tertiary glyphs, muted UI controls |
-| Pale Mist | `#d6d6d6` | `--color-pale-mist` | Hairline dividers, subtle borders between content blocks |
-| Ash Veil | `#e2e2e5` | `--color-ash-veil` | Button backgrounds for secondary filled actions (dark mode variant) |
-| Iris Blue | `#0071e3` | `--color-iris-blue` | Filled primary action buttons — the sole chromatic CTA, signals the only commitment the page asks of you |
-| Sapphire | `#0066cc` | `--color-sapphire` | Outlined action buttons, body and link text — darker blue for outlined variants and inline links |
-| Sky Signal | `#2997ff` | `--color-sky-signal` | Outlined action buttons on dark sections, secondary CTAs — lighter blue for ghost buttons against dark hero bands |
-| Cornflower | `#509be7` | `--color-cornflower` | Hover state for inline links, decorative link accent |
-| Ice Wash | `#aad0f6` | `--color-ice-wash` | Gradient section background wash — the pale blue tint behind iPad Air / MacBook Air hero bands |
+| Parchment | `#d8cbb8` | `--color-parchment` | Page canvas and primary card surfaces — the warm beige that carries the entire interface |
+| Linen | `#bfb4a3` | `--color-linen` | Secondary surface tone for elevated sections and subtle layering above parchment |
+| Warm Stone | `#b6ab9c` | `--color-warm-stone` | Hairline borders and 1px section dividers throughout the interface |
+| Walnut | `#978e81` | `--color-walnut` | Muted helper text, captions, and de-emphasized metadata |
+| Espresso | `#615b53` | `--color-espresso` | Secondary body text and subhead copy — warm dark gray that softens pure black |
+| Onyx Warm | `#2c2c2c` | `--color-onyx-warm` | Primary text, navigation, headings, and dark surface fills |
+| Midnight Roast | `#292622` | `--color-midnight-roast` | Deepest dark surface for photo overlays and high-contrast hero backgrounds |
+| Saffron Glow | `#d49653` | `--color-saffron-glow` | Sole chromatic accent — featured tags, active states, decorative punctuation; warm spice-orange against the beige canvas creates curated restraint |
 
 ## Tokens — Typography
 
-### SF Pro Display — Product headlines, large editorial display text. Used at 56px/600 for hero titles like 'MacBook Air' and 40px/600 for section subheads. The tighter 1.07 line height at 56px is signature — it lets the headline sit as a single visual block without breathing room between lines. · `--font-sf-pro-display`
-- **Substitute:** system-ui, -apple-system, BlinkMacSystemFont
-- **Weights:** 400, 600, 700
-- **Sizes:** 21px, 28px, 40px, 56px
-- **Line height:** 1.07–1.19
-- **Letter spacing:** -0.0050em, 0.0070em, 0.0110em
-- **OpenType features:** `"numr" on`
-- **Role:** Product headlines, large editorial display text. Used at 56px/600 for hero titles like 'MacBook Air' and 40px/600 for section subheads. The tighter 1.07 line height at 56px is signature — it lets the headline sit as a single visual block without breathing room between lines.
+### TT Ramillas Variable — All display and section headings — set uppercase at extreme sizes with weight 300; the whisper-weight serif at 115px is the signature anti-convention choice, creating editorial luxury through restraint rather than bold volume · `--font-tt-ramillas-variable`
+- **Substitute:** Cormorant Garamond, Playfair Display, or DM Serif Display
+- **Weights:** 300
+- **Sizes:** 22px, 26px, 50px, 65px, 69px, 115px
+- **Line height:** 0.80, 0.85, 0.90, 1.00, 1.20
+- **Letter spacing:** -0.0400em at display sizes (115px/69px/65px), -0.0300em at 50px, -0.0350em at 22px, -0.0060em at 26px
+- **Role:** All display and section headings — set uppercase at extreme sizes with weight 300; the whisper-weight serif at 115px is the signature anti-convention choice, creating editorial luxury through restraint rather than bold volume
 
-### SF Pro Text — Navigation, body copy, buttons, footer, subheads below display. The 17px/400/1.47 body setting appears 221 times — this is the workhorse. The 12px/400/1.33 setting handles everything in the footer and micro-copy. 44px/400/1.00 is the nav logo wordmark. · `--font-sf-pro-text`
-- **Substitute:** system-ui, -apple-system, BlinkMacSystemFont
-- **Weights:** 400, 600
-- **Sizes:** 12px, 13px, 14px, 17px, 26px, 34px, 44px
-- **Line height:** 1.00–1.47
-- **Letter spacing:** -0.0300em, -0.0270em, -0.0220em, -0.0160em, -0.0150em, -0.0110em, -0.0100em, -0.0030em
-- **OpenType features:** `"numr" on`
-- **Role:** Navigation, body copy, buttons, footer, subheads below display. The 17px/400/1.47 body setting appears 221 times — this is the workhorse. The 12px/400/1.33 setting handles everything in the footer and micro-copy. 44px/400/1.00 is the nav logo wordmark.
+### Satoshi — Navigation, buttons, body copy, labels, and the 199px hero wordmark — confident 500-weight geometric sans provides structural counterpoint to the airy serif · `--font-satoshi`
+- **Substitute:** Inter, DM Sans, or Manrope
+- **Weights:** 500, 700
+- **Sizes:** 12px, 13px, 14px, 15px, 42px, 199px
+- **Line height:** 0.80, 1.00, 1.30, 1.40
+- **Letter spacing:** -0.0160em at 199px, -0.0400em at 42px, -0.0100em at 14px/15px, -0.0110em at 13px, -0.0120em at 12px
+- **Role:** Navigation, buttons, body copy, labels, and the 199px hero wordmark — confident 500-weight geometric sans provides structural counterpoint to the airy serif
 
 ### Type Scale
 
 | Role | Family | Weight | Size | Line Height | Letter Spacing | Token |
 |------|--------|--------|------|-------------|----------------|-------|
-| caption | — | — | 12px | 1.33 | -0.12px | `--text-caption` |
-| body | — | — | 17px | 1.47 | -0.37px | `--text-body` |
-| subheading | — | — | 21px | 1.19 | 0.23px | `--text-subheading` |
-| heading-sm | — | — | 26px | 1.47 | -0.39px | `--text-heading-sm` |
-| heading | — | — | 34px | 1.47 | -0.37px | `--text-heading` |
-| heading-lg | — | — | 40px | 1.1 | 0px | `--text-heading-lg` |
-| display | — | — | 56px | 1.07 | -0.28px | `--text-display` |
+| caption | — | — | 13px | 1.3 | -0.143px | `--text-caption` |
+| body | — | — | 15px | 1.4 | -0.15px | `--text-body` |
+| body-lg | — | — | 26px | 1.2 | -0.156px | `--text-body-lg` |
+| subheading | — | — | 42px | 1 | -1.68px | `--text-subheading` |
+| heading-sm | — | — | 50px | 0.9 | -1.5px | `--text-heading-sm` |
+| heading | — | — | 65px | 0.85 | -2.6px | `--text-heading` |
+| heading-lg | — | — | 69px | 0.9 | -2.76px | `--text-heading-lg` |
+| display | — | — | 115px | 0.8 | -4.6px | `--text-display` |
 
 ## Tokens — Spacing & Shapes
-
-**Base unit:** 4px
 
 **Density:** compact
 
@@ -71,178 +60,179 @@ Apple (España) operates on a gallery principle: the product is the hero, the pa
 | Name | Value | Token |
 |------|-------|-------|
 | 4 | 4px | `--spacing-4` |
+| 5 | 5px | `--spacing-5` |
+| 6 | 6px | `--spacing-6` |
+| 7 | 7px | `--spacing-7` |
 | 8 | 8px | `--spacing-8` |
+| 10 | 10px | `--spacing-10` |
 | 12 | 12px | `--spacing-12` |
 | 16 | 16px | `--spacing-16` |
+| 17 | 17px | `--spacing-17` |
 | 20 | 20px | `--spacing-20` |
 | 24 | 24px | `--spacing-24` |
-| 40 | 40px | `--spacing-40` |
-| 48 | 48px | `--spacing-48` |
-| 56 | 56px | `--spacing-56` |
-| 60 | 60px | `--spacing-60` |
+| 28 | 28px | `--spacing-28` |
+| 32 | 32px | `--spacing-32` |
+| 42 | 42px | `--spacing-42` |
+| 92 | 92px | `--spacing-92` |
+| 206 | 206px | `--spacing-206` |
 
 ### Border Radius
 
 | Element | Value |
 |---------|-------|
-| nav | 0px |
-| tags | 980px |
-| buttons | 980px |
-| sections | 0px |
+| tags | 3px |
+| cards | 0px |
+| inputs | 3px |
+| buttons | 3px |
 
 ### Layout
 
-- **Page max-width:** 980px
-- **Section gap:** 80-120px
-- **Card padding:** 0px
-- **Element gap:** 12px
+- **Page max-width:** 1440px
+- **Section gap:** 120-160px
+- **Card padding:** 28px
+- **Element gap:** 12-16px
 
 ## Components
 
-### Filled Primary Button
-**Role:** The single chromatic CTA on any page — signals the most important action
+### Ghost Outlined Button
+**Role:** Primary interactive element for navigation and hero CTAs
 
-Pill-shaped (border-radius: 980px), background #0071e3, text #ffffff at 14px/400, padding 11px 21px. Sits on the light canvas as the only non-monochrome element in the action set. Used for 'Más información' across product sections.
+Transparent background, 1px solid #d8cbb8 border (or #2c2c2c on light sections), text in #d8cbb8 on dark overlays / #2c2c2c on light canvas. Satoshi 500, 14px, uppercase, letter-spacing -0.14px. Padding 20px horizontal, 20px vertical. Border-radius 3px. No shadow.
 
-### Outlined Secondary Button
-**Role:** Companion action to the filled primary, typically 'Comprar' or 'Comprar un iPhone'
+### Text Link Button
+**Role:** Inline navigation and tertiary actions
 
-Pill-shaped (border-radius: 980px), transparent background, 1px border in #0066cc, text #0066cc at 14px/400, padding 11px 21px. Always appears to the right of the filled primary button. Pairs the two pills side by side with an 8px gap.
+No background or border. Text-only with underline-on-hover. Satoshi 500, 13-15px, uppercase. Color follows context: #d8cbb8 on dark overlays, #2c2c2c on light sections.
 
-### Ghost Outline Button (Dark Surface)
-**Role:** Outlined action variant used on dark hero bands like Apple TV+ carousel
+### Hero Wordmark Display
+**Role:** Signature typographic statement on hero
 
-Pill-shaped (border-radius: 980px), transparent background, 1px border in #2997ff, text #2997ff at 14px/400, padding 8px 15px (slightly tighter than the light-surface outlined variant).
+Satoshi 500, 199px, line-height 0.8, letter-spacing -0.0160em, uppercase. Color #d8cbb8. Sits over dark photographic overlay as the opening brand moment.
 
-### Text Link
-**Role:** Inline links in body copy, footer terms, and the global message bar
+### Editorial Section Heading
+**Role:** Section titles throughout the page
 
-No border-radius, no background, color #0066cc, text-decoration-underline on hover. The link 'Comprar >' in the financing banner is the canonical example — it sits inline with body text, underlined or with a chevron suffix.
+TT Ramillas Variable 300, 50-115px range depending on section prominence, uppercase, line-height 0.8-0.9, letter-spacing -0.0400em to -0.0300em. Color #d8cbb8 on dark sections, #2c2c2c on light. The whisper-weight serif at extreme size is the signature choice.
 
-### Global Nav Bar
-**Role:** Persistent top navigation across all pages
+### Testimonial Card
+**Role:** Guest review display
 
-Height 44px, full viewport width, background #ffffff with backdrop-filter saturate(1.8) blur(20px). Left: Apple logo glyph. Center: 9 nav items (Tienda, Mac, iPad, iPhone, Watch, AirPods, TV y Casa, Entretenimiento, Accesorios, Soporte) at 12px/400, color #1d1d1f with #474747 hover. Right: search icon and bag icon, both 44px tap targets.
+Background #d8cbb8 (same as canvas, no contrast elevation). Border-radius 0px. Padding 52px top, 28px sides, 32px bottom. No shadow, no border. Content: 5-star rating row in #d49653, review body in Satoshi 500 14px #2c2c2c, source attribution (Yelp/Reddit/Maps) in micro caps top-right, author name in #978e81.
 
-### Global Message Bar
-**Role:** Promotional ribbon below the nav — financing offers, launch announcements
+### Image Overlay Container
+**Role:** Full-bleed atmospheric photography with text
 
-Background #ffffff, 12px/400 body text, centered, includes an inline blue text link. No border, no padding above or below beyond the nav's own spacing.
+Full-viewport image with dark gradient overlay (linear darkening from transparent to rgba(41,38,34,0.7+)). Text content sits top-left or centered in #d8cbb8. Used for hero and atmospheric transition sections.
 
-### Product Hero Section
-**Role:** The dominant unit of the page — one product per full-width section
+### Star Rating Display
+**Role:** Google review score and star indicators
 
-Full-bleed width, background switches between #f5f5f7 (neutral) and soft gradient washes (e.g. pale blue for iPad Air, near-white for MacBook Air). Centered content stack: product name at 56px/600 in #1d1d1f, subhead at 21px/400 in #1d1d1f, button pair centered below, then a large product render image (MacBook open, iPhone lineup) at full width. Section height typically 600-700px.
+5 filled stars in #d49653, 15px size. Numerical score (e.g. 4.7/5) in Satoshi 700 large. Source label 'Excellent' in Satoshi 500 13px. White card background with subtle border, embedded as floating widget.
 
-### Button Pair (CTA Cluster)
-**Role:** The action duo under every product headline
+### Menu Item Card
+**Role:** Individual dish presentation
 
-Two pill buttons centered horizontally with 8px gap. Left: filled #0071e3 with 'Más información'. Right: outlined #0066cc with 'Comprar' or 'Comprar un iPhone'. The pair is the only place on the page where blue appears as a color — everything else is monochrome.
+Transparent background. No border. Image (food photo) + dish name in TT Ramillas Variable 300 or Satoshi 500, description in body-sm. Padding 0px on container, internal spacing 16px between elements.
 
-### Entertainment Carousel
-**Role:** Full-bleed horizontal scroll for Apple TV+ content
+### Navigation Bar
+**Role:** Top-level site navigation
 
-Background dark or photographic, large card tiles (roughly 280px wide, 420px tall) with rounded corners ~12px. Each card has a 'Ver ahora' white pill button overlaid in the bottom-left corner. Dot pagination (8 dots) below the carousel indicates position.
+Transparent background over hero. Left: small logo mark. Center-left: nav links (Home, Catering, Gift Cards, About, Contact) in Satoshi 500 14px uppercase, color #d8cbb8, letter-spacing -0.14px. Right: 'Menu' link, icon button (3px radius square), 'Order Now' with dropdown chevron, gift icon button. No background bar — floats over content.
 
-### Product Lineup Display
-**Role:** Showcase of product variants (iPhone 17 colors, MacBook angles)
+### Section Divider Rule
+**Role:** Editorial column-rule separator between sections
 
-Full-width product photography with no card or border — the products float on the section background. Multiple product angles or colorways arranged in a row, shot on pure #f5f5f7 or #aad0f6 backgrounds with soft drop shadows in the photography itself.
+1px solid #b6ab9c horizontal line. Full-width within max-width container. No vertical padding — acts as typographic element, not structural.
 
-### iPad Air Wordmark
-**Role:** Product name with mixed-weight treatment
+### Caption Label
+**Role:** Small uppercase section metadata and tags
 
-The word 'iPad' at 40px/600 in #1d1d1f followed by 'air' in a lighter italic-leaning weight (visually distinct script treatment) at the same size, in #1d1d1f. The weight contrast within a single wordmark is the signature treatment for Air-tier products.
+Satoshi 500, 12px, uppercase, letter-spacing -0.144px. Color #978e81 or #d8cbb8 depending on surface. Examples: 'SERVING CENTRAL FLORIDA', 'ESTABLISHED 1996', source names on testimonial cards.
 
-### Footer Link List
-**Role:** Dense grid of navigational and legal links at the page bottom
+### Hero Meta Label
+**Role:** Date stamp or supporting hero information
 
-Background #f5f5f7, two-column layout with column headings at 12px/600 in #1d1d1f and link items at 12px/400 in #515154. Columns separated by ~10px row gap. No dividers between items, no card containers.
-
-### Legal / Terms Block
-**Role:** Fine-print legal text at the very bottom of the page
-
-Full width within the footer band, 12px/400 in #707070, line-height 1.33. Dense paragraph blocks with inline blue links to 'Consulta las condiciones'.
+Satoshi 500, 12-14px, uppercase, letter-spacing -0.14px. Flanks the main hero heading as flanking metadata ('SERVING CENTRAL FLORIDA' left, 'ESTABLISHED 1996' right).
 
 ## Do's and Don'ts
 
 ### Do
-- Use border-radius 980px on all buttons and pill tags — this is the system's defining shape language.
-- Use SF Pro Display weight 600 for product headlines at 40px or 56px; never use display weight 400 for headlines.
-- Center all hero text stacks horizontally — the system is symmetrical, not left-aligned.
-- Use #0071e3 exclusively for filled primary action buttons; use #0066cc for outlined buttons and inline links. These are the only two blues in the action set.
-- Separate product sections with a change in background tint (#f5f5f7 → #aad0f6 → dark photo), never with a border or divider line.
-- Set body text at 17px/400/1.47 with letter-spacing -0.022em — this is the workhorse setting and appears in 221 instances.
-- Use a 44px-tall nav bar with backdrop-filter blur(20px) saturate(1.8) — the frosted glass effect is essential to the page's weightless feel.
+- Set all section headings in TT Ramillas Variable at weight 300 — never bold the serif display face; the whisper weight IS the luxury
+- Use uppercase + tight letter-spacing (-0.0400em to -0.0300em) on every heading 50px and above
+- Reserve #d49653 saffron exclusively for star ratings, active states, and single decorative punctuation moments — it should appear on screen no more than 2-3 times per fold
+- Apply 0px border-radius to all cards, sections, and image containers; reserve 3px only for buttons, tags, and interactive controls
+- Use 1px solid #b6ab9c hairlines as section dividers — they function as editorial column rules, not decorative borders
+- Lead with dark photographic full-bleed sections (hero + atmospheric transitions), then transition to the #d8cbb8 parchment canvas for content-heavy lower sections
+- Set body text at 14px Satoshi 500 with -0.0100em tracking; never drop below 13px for readable content
+- Use the marquee animation sparingly for signature dish scrolling — it is the only motion personality in the system
 
 ### Don't
-- Don't add box-shadows to buttons, cards, or sections — elevation comes from color contrast, not shadows.
-- Don't use the brand blue (#0071e3) for anything other than filled primary action buttons; links and outlines use #0066cc.
-- Don't left-align product headlines; the system is always centered.
-- Don't use border-radius values below 980px on buttons — no square buttons, no 4px or 8px pill variants.
-- Don't place horizontal rules or border lines between sections; use background color shifts instead.
-- Don't use SF Pro Display at sizes below 21px; that family is reserved for headlines and large body. Use SF Pro Text for everything under 21px.
-- Don't introduce secondary accent colors, gradients, or decorative backgrounds within the product hero areas — the product render is the only visual interest.
+- Do not round card corners — sharp geometry is signature; 0px radius everywhere except buttons
+- Do not add box-shadows or elevation to cards — the system relies on flatness and hairline borders, never depth
+- Do not introduce a second chromatic accent — the saffron orange stands alone against the warm neutrals
+- Do not set body text above 16px or below 13px — the 14px Satoshi 500 baseline is deliberate
+- Do not center-align body paragraphs — left-align for editorial column flow
+- Do not use filled solid-color buttons with chromatic backgrounds — all interactive elements are ghost/outlined or text-only
+- Do not use pure black (#000000) for text — always #2c2c2c to maintain the warm temperature
+- Do not add gradients — the palette is flat; atmosphere comes from photography, not CSS effects
+- Do not bold the TT Ramillas serif headings — weight 300 is non-negotiable; use Satoshi 700 for emphasis instead
+- Do not introduce additional serif or display faces — TT Ramillas and Satoshi are the complete type system
 
 ## Surfaces
 
 | Level | Name | Value | Purpose |
 |-------|------|-------|---------|
-| 0 | Canvas | `#f5f5f7` | Page background and the majority of section fills |
-| 1 | Pure White | `#ffffff` | Nav bar surface, white-on-blue button text, card elevation |
-| 2 | Section Wash — Ice | `#aad0f6` | Soft blue gradient band behind certain product hero sections |
-| 3 | Dark Band | `#000000` | Apple TV+ / entertainment carousel section — full-bleed dark surface |
+| 0 | Parchment Canvas | `#d8cbb8` | Base page background and dominant card fill |
+| 1 | Linen | `#bfb4a3` | Section tone shift and subtle elevation |
+| 2 | Midnight Roast | `#292622` | Dark overlay behind hero and atmospheric photography |
+| 3 | Onyx Warm | `#2c2c2c` | Navigation and highest-contrast surface |
 
 ## Elevation
 
-- **Global Nav:** `No shadow — uses backdrop-filter: saturate(1.8) blur(20px) for a frosted glass effect against any background`
+The system intentionally avoids shadows and elevation. Depth is communicated through tonal shifts in the warm neutral palette (parchment #d8cbb8 → linen #bfb4a3 → walnut #978e81) and through 1px hairline borders, never through box-shadows. Components feel printed onto the surface rather than floating above it — an editorial flatness that signals fine-dining sophistication over app-like depth.
 
 ## Imagery
 
-Product photography is the dominant visual content — large, center-anchored renders of MacBooks, iPhones, and iPads float directly on the section background with no card framing. Photography style is studio-catalog: pure white or pale blue seamless backgrounds, soft natural shadows under the product, no lifestyle context or human models in the product sections. The Apple TV+ carousel uses cinematic dark photography with strong color grading. Iconography is minimal — SF Symbols-style glyphs in the nav at 1.5-2px stroke weight, monochrome. The page contains zero illustrations, zero abstract graphics, and zero decorative backgrounds beyond the per-section tint washes. Imagery occupies roughly 50% of the page's visual area, with the remaining 50% being typography and the off-white canvas.
+Full-bleed atmospheric photography dominates the upper half of the page: dark, moody restaurant interiors shot at table-height showing place settings, candles, and food in sharp focus with shallow depth of field. Tonal treatment is warm and dim — amber candlelight, rich wood, copper accents. The lower half transitions to food photography presented as editorial still-lives on the parchment canvas, with dishes styled on dark surfaces. No lifestyle imagery, no people shots, no abstract graphics. Icons are minimal — only a small ornamental logo mark and a few functional icons (gift, menu, chevrons) rendered in thin 1px strokes. The marquee element scrolls signature dish names horizontally as the sole kinetic element.
 
 ## Layout
 
-The page is a vertical stack of full-bleed product sections, each one viewport-height or taller. Max content width for text is ~980px, always centered. Nav is a fixed 44px bar at the top with a frosted glass effect. Each product section follows the same vertical rhythm: centered headline (56px) → centered subhead (21px) → centered button pair → large product render filling the lower 60% of the section. Sections alternate between #f5f5f7 canvas and soft gradient washes to create visual separation. The Apple TV+ entertainment carousel is the only section that breaks the centered-text pattern — it is a full-bleed edge-to-edge horizontal scroll with large card tiles. Footer is a dense 4-column link grid in a #f5f5f7 band at the very bottom. No sidebar navigation, no mega-menus in the visible viewport.
+Full-bleed sections with no centered max-width container — content extends edge-to-edge. Hero and atmospheric sections use dark photographic backgrounds with text overlaid top-left or centered. Content sections after the hero unfold on the parchment canvas with generous breathing room (120-160px section gaps). Headings and body text align left, creating an editorial column rhythm rather than centered marketing stacks. Navigation is a floating transparent bar over the hero with no visible background. The testimonials section uses a horizontal card row with sharp-cornered cards on the same-color canvas. No sidebar, no grid columns — the layout reads as a vertical scroll of editorial spreads.
 
 ## Agent Prompt Guide
 
-**Quick Color Reference**
-- text (primary): #1d1d1f
-- text (secondary): #707070
-- text (nav glyphs): #333333
-- background (canvas): #f5f5f7
-- border / hairline: #d6d6d6
-- accent (nav text, links): #0066cc
-- primary action: #0071e3 (filled action)
+Quick Color Reference:
+• Canvas: #d8cbb8 (warm parchment beige)
+• Dark surface: #2c2c2c / #292622 (warm onyx)
+• Primary text: #2c2c2c
+• Muted text: #978e81 / #615b53
+• Border: #b6ab9c (1px hairline)
+• Accent: #d49653 (saffron — stars, active states only)
+• primary action: no distinct CTA color
 
-**Example Component Prompts**
+3 Example Component Prompts:
 
-1. **Product Hero Section**: Full-bleed section, background #f5f5f7. Centered headline at 56px SF Pro Display weight 600, color #1d1d1f, letter-spacing -0.28px. Subhead at 21px SF Pro Display weight 400, color #1d1d1f. Below the text, a centered button pair with 8px gap: filled blue button (#0071e3, white text, 980px radius, 11px 21px padding) and outlined blue button (transparent background, 1px solid #0066cc border, #0066cc text, 980px radius, 11px 21px padding). Below the buttons, a large product render at full section width with no card or shadow.
+1. Build a section heading: TT Ramillas Variable weight 300, 69px, uppercase, line-height 0.9, letter-spacing -2.76px, color #2c2c2c on #d8cbb8 canvas. No border, no background.
 
-2. **Filled Primary Button**: border-radius 980px, background #0071e3, color #ffffff, padding 11px 21px, font 14px SF Pro Text weight 400, letter-spacing -0.22px. No border, no shadow.
+2. Build a ghost outlined button: transparent background, 1px solid #2c2c2c border, text 'Reserve a Table' in Satoshi 500, 14px, uppercase, letter-spacing -0.14px, color #2c2c2c. Padding 20px vertical, 28px horizontal. Border-radius 3px. No shadow.
 
-3. **Outlined Secondary Button**: border-radius 980px, background transparent, 1px solid border #0066cc, color #0066cc, padding 11px 21px, font 14px SF Pro Text weight 400.
+3. Build a testimonial card: background #d8cbb8 (same as canvas), border-radius 0px, padding 52px top / 28px sides / 32px bottom. Five #d49653 stars at top, review body in Satoshi 500 14px #2c2c2c, author name in #978e81 Satoshi 500 12px at bottom. No border, no shadow.
 
-4. **Global Nav Bar**: Height 44px, full viewport width, background #ffffff, backdrop-filter saturate(1.8) blur(20px). Apple logo glyph on the left, nav items centered at 12px SF Pro Text weight 400 in #1d1d1f, search and bag icons on the right. A thin 1px bottom border in #d6d6d6 may appear on scroll.
+## Editorial Type Philosophy
 
-5. **Product Lineup Section**: Full-width section on background #aad0f6. A horizontal arrangement of product renders (no cards, no borders) photographed with soft natural shadows. Section padding-top 80px, section padding-bottom 80px. Headline at 40px SF Pro Display weight 600 centered above.
+The type system performs a deliberate duet: TT Ramillas Variable at weight 300 sings the editorial aria at extreme sizes (50-115px), while Satoshi at weight 500 provides the structural recitative at 12-15px. The serif never appears below 22px — it is a display voice only. The sans never appears above 42px except the singular 199px hero wordmark. All headings are uppercase. Letter-spacing tightens aggressively with size: -0.0060em at 26px, -0.0300em at 50px, -0.0400em at 65px and above. Line-heights compress to 0.8-0.9 at display sizes, letting oversized lettersets stack into dense typographic blocks reminiscent of vintage restaurant menus and fashion magazine covers.
 
-## Section Background System
+## Motion Philosophy
 
-Apple (España) uses a rotating palette of nearly-white tinted backgrounds to separate product sections without borders or dividers. The pattern: each major product gets a full-bleed band with a soft gradient or flat tint. MacBook Air sits on a near-white wash. iPhone 17 on pure #f5f5f7. iPad Air on a pale blue (#aad0f6) gradient. Apple TV+ content fills the entire viewport edge-to-edge with photographic dark imagery. This color rotation is the primary visual divider on the page — there are zero horizontal rules or section dividers used in the main content flow.
-
-## Button Pair Convention
-
-Every product hero contains exactly one button pair, always centered, always in the same order: filled blue on the left, outlined blue on the right. The filled button always says 'Más información'. The outlined button says 'Comprar', 'Comprar un iPhone', or a product-specific variant. The gap between them is 8px. This pair is never repeated, never stacked vertically, and never appears more than once per section.
+Motion is minimal and deliberate. Primary duration is 0.4s with ease easing for hover states and reveals. The marquee animation is the only extended motion (27s linear) and is reserved for signature dish name scrolling. All interactive transitions use the cubic-bezier(0.25, 0.46, 0.45, 0.94) curve for organic deceleration. No parallax, no scroll-triggered animations, no loading sequences — the page should feel like turning pages of a printed menu, not navigating a web app.
 
 ## Similar Brands
 
-- **Bang & Olufsen** — Same museum-gallery aesthetic: product-as-hero on a near-white canvas, centered restrained typography, no card containers, product photography floating on negative space
-- **Teenage Engineering** — Same monochrome discipline with a single vivid accent color, pill-shaped buttons, and product photography on plain off-white backgrounds with no decorative chrome
-- **Nothing (nothing.tech)** — Same product-showcase homepage pattern with full-bleed product renders, centered text stacks, and minimal UI chrome — though Nothing pushes to dark mode while Apple stays light
-- **Leica Camera** — Same editorial product-gallery layout: large centered product names, pill-shaped action buttons, generous vertical spacing, photography-first with no decorative illustration
-- **Uniqlo** — Same sectioned full-bleed homepage with per-section background tints, centered headline+subhead+CTA rhythm, and minimal UI ornamentation
+- **SAGA** — Same editorial restaurant aesthetic with oversized serif headings and dark atmospheric photography over full-bleed sections
+- **Lilia (Missy Robbins)** — Similar whisper-weight serif at extreme sizes paired with minimal sharp-geometry UI and warm earthy palette
+- **Le Bernardin** — Fine-dining restraint with monochrome warm canvas, single accent color, and editorial type hierarchy
+- **Atomix** — Korean fine-dining site using similar parchment-toned canvas, sharp 0px-radius cards, and large uppercase display serif
+- **Sqirl (LA)** — Warm beige dominant palette with dark photographic hero sections and minimal sharp-cornered component geometry
 
 ## Quick Start
 
@@ -251,90 +241,88 @@ Every product hero contains exactly one button pair, always centered, always in 
 ```css
 :root {
   /* Colors */
-  --color-fog-white: #f5f5f7;
-  --color-pure-white: #ffffff;
-  --color-obsidian: #1d1d1f;
-  --color-carbon: #000000;
-  --color-pewter: #707070;
-  --color-slate: #505050;
-  --color-graphite: #474747;
-  --color-iron: #333333;
-  --color-silver: #858585;
-  --color-pale-mist: #d6d6d6;
-  --color-ash-veil: #e2e2e5;
-  --color-iris-blue: #0071e3;
-  --color-sapphire: #0066cc;
-  --color-sky-signal: #2997ff;
-  --color-cornflower: #509be7;
-  --color-ice-wash: #aad0f6;
+  --color-parchment: #d8cbb8;
+  --color-linen: #bfb4a3;
+  --color-warm-stone: #b6ab9c;
+  --color-walnut: #978e81;
+  --color-espresso: #615b53;
+  --color-onyx-warm: #2c2c2c;
+  --color-midnight-roast: #292622;
+  --color-saffron-glow: #d49653;
 
   /* Typography — Font Families */
-  --font-sf-pro-display: 'SF Pro Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sf-pro-text: 'SF Pro Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-tt-ramillas-variable: 'TT Ramillas Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-satoshi: 'Satoshi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
-  --text-caption: 12px;
-  --leading-caption: 1.33;
-  --tracking-caption: -0.12px;
-  --text-body: 17px;
-  --leading-body: 1.47;
-  --tracking-body: -0.37px;
-  --text-subheading: 21px;
-  --leading-subheading: 1.19;
-  --tracking-subheading: 0.23px;
-  --text-heading-sm: 26px;
-  --leading-heading-sm: 1.47;
-  --tracking-heading-sm: -0.39px;
-  --text-heading: 34px;
-  --leading-heading: 1.47;
-  --tracking-heading: -0.37px;
-  --text-heading-lg: 40px;
-  --leading-heading-lg: 1.1;
-  --tracking-heading-lg: 0px;
-  --text-display: 56px;
-  --leading-display: 1.07;
-  --tracking-display: -0.28px;
+  --text-caption: 13px;
+  --leading-caption: 1.3;
+  --tracking-caption: -0.143px;
+  --text-body: 15px;
+  --leading-body: 1.4;
+  --tracking-body: -0.15px;
+  --text-body-lg: 26px;
+  --leading-body-lg: 1.2;
+  --tracking-body-lg: -0.156px;
+  --text-subheading: 42px;
+  --leading-subheading: 1;
+  --tracking-subheading: -1.68px;
+  --text-heading-sm: 50px;
+  --leading-heading-sm: 0.9;
+  --tracking-heading-sm: -1.5px;
+  --text-heading: 65px;
+  --leading-heading: 0.85;
+  --tracking-heading: -2.6px;
+  --text-heading-lg: 69px;
+  --leading-heading-lg: 0.9;
+  --tracking-heading-lg: -2.76px;
+  --text-display: 115px;
+  --leading-display: 0.8;
+  --tracking-display: -4.6px;
 
   /* Typography — Weights */
-  --font-weight-regular: 400;
-  --font-weight-semibold: 600;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* Spacing */
-  --spacing-unit: 4px;
   --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-7: 7px;
   --spacing-8: 8px;
+  --spacing-10: 10px;
   --spacing-12: 12px;
   --spacing-16: 16px;
+  --spacing-17: 17px;
   --spacing-20: 20px;
   --spacing-24: 24px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-56: 56px;
-  --spacing-60: 60px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-42: 42px;
+  --spacing-92: 92px;
+  --spacing-206: 206px;
 
   /* Layout */
-  --page-max-width: 980px;
-  --section-gap: 80-120px;
-  --card-padding: 0px;
-  --element-gap: 12px;
+  --page-max-width: 1440px;
+  --section-gap: 120-160px;
+  --card-padding: 28px;
+  --element-gap: 12-16px;
 
   /* Border Radius */
-  --radius-full: 980px;
-  --radius-full-2: 999px;
-  --radius-full-3: 9999px;
+  --radius-sm: 3px;
 
   /* Named Radii */
-  --radius-nav: 0px;
-  --radius-tags: 980px;
-  --radius-buttons: 980px;
-  --radius-sections: 0px;
+  --radius-tags: 3px;
+  --radius-cards: 0px;
+  --radius-inputs: 3px;
+  --radius-buttons: 3px;
 
   /* Surfaces */
-  --surface-canvas: #f5f5f7;
-  --surface-pure-white: #ffffff;
-  --surface-section-wash-ice: #aad0f6;
-  --surface-dark-band: #000000;
+  --surface-parchment-canvas: #d8cbb8;
+  --surface-linen: #bfb4a3;
+  --surface-midnight-roast: #292622;
+  --surface-onyx-warm: #2c2c2c;
 }
 ```
 
@@ -343,65 +331,64 @@ Every product hero contains exactly one button pair, always centered, always in 
 ```css
 @theme {
   /* Colors */
-  --color-fog-white: #f5f5f7;
-  --color-pure-white: #ffffff;
-  --color-obsidian: #1d1d1f;
-  --color-carbon: #000000;
-  --color-pewter: #707070;
-  --color-slate: #505050;
-  --color-graphite: #474747;
-  --color-iron: #333333;
-  --color-silver: #858585;
-  --color-pale-mist: #d6d6d6;
-  --color-ash-veil: #e2e2e5;
-  --color-iris-blue: #0071e3;
-  --color-sapphire: #0066cc;
-  --color-sky-signal: #2997ff;
-  --color-cornflower: #509be7;
-  --color-ice-wash: #aad0f6;
+  --color-parchment: #d8cbb8;
+  --color-linen: #bfb4a3;
+  --color-warm-stone: #b6ab9c;
+  --color-walnut: #978e81;
+  --color-espresso: #615b53;
+  --color-onyx-warm: #2c2c2c;
+  --color-midnight-roast: #292622;
+  --color-saffron-glow: #d49653;
 
   /* Typography */
-  --font-sf-pro-display: 'SF Pro Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sf-pro-text: 'SF Pro Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-tt-ramillas-variable: 'TT Ramillas Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-satoshi: 'Satoshi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
-  --text-caption: 12px;
-  --leading-caption: 1.33;
-  --tracking-caption: -0.12px;
-  --text-body: 17px;
-  --leading-body: 1.47;
-  --tracking-body: -0.37px;
-  --text-subheading: 21px;
-  --leading-subheading: 1.19;
-  --tracking-subheading: 0.23px;
-  --text-heading-sm: 26px;
-  --leading-heading-sm: 1.47;
-  --tracking-heading-sm: -0.39px;
-  --text-heading: 34px;
-  --leading-heading: 1.47;
-  --tracking-heading: -0.37px;
-  --text-heading-lg: 40px;
-  --leading-heading-lg: 1.1;
-  --tracking-heading-lg: 0px;
-  --text-display: 56px;
-  --leading-display: 1.07;
-  --tracking-display: -0.28px;
+  --text-caption: 13px;
+  --leading-caption: 1.3;
+  --tracking-caption: -0.143px;
+  --text-body: 15px;
+  --leading-body: 1.4;
+  --tracking-body: -0.15px;
+  --text-body-lg: 26px;
+  --leading-body-lg: 1.2;
+  --tracking-body-lg: -0.156px;
+  --text-subheading: 42px;
+  --leading-subheading: 1;
+  --tracking-subheading: -1.68px;
+  --text-heading-sm: 50px;
+  --leading-heading-sm: 0.9;
+  --tracking-heading-sm: -1.5px;
+  --text-heading: 65px;
+  --leading-heading: 0.85;
+  --tracking-heading: -2.6px;
+  --text-heading-lg: 69px;
+  --leading-heading-lg: 0.9;
+  --tracking-heading-lg: -2.76px;
+  --text-display: 115px;
+  --leading-display: 0.8;
+  --tracking-display: -4.6px;
 
   /* Spacing */
   --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-7: 7px;
   --spacing-8: 8px;
+  --spacing-10: 10px;
   --spacing-12: 12px;
   --spacing-16: 16px;
+  --spacing-17: 17px;
   --spacing-20: 20px;
   --spacing-24: 24px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-56: 56px;
-  --spacing-60: 60px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-42: 42px;
+  --spacing-92: 92px;
+  --spacing-206: 206px;
 
   /* Border Radius */
-  --radius-full: 980px;
-  --radius-full-2: 999px;
-  --radius-full-3: 9999px;
+  --radius-sm: 3px;
 }
 ```

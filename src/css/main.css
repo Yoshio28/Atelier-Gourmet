@@ -59,11 +59,22 @@ h1, h2, h3, p { margin: 0; }
 .nav__cta { padding: 5px 13px; font-size: var(--text-caption); }
 
 /* Hero */
-.hero { padding-top: 120px; padding-bottom: 120px; min-height: 640px; display: flex; align-items: center; }
-.hero .container { width: 100%; }
+.hero { position: relative; overflow: hidden; isolation: isolate; padding-top: 120px; padding-bottom: 120px; min-height: 680px; min-height: min(100svh, 820px); display: flex; align-items: center; }
+.hero__content { position: relative; z-index: 2; width: 100%; }
 .hero__logo { width: 88px; height: 88px; margin: 0 auto var(--spacing-24); color: var(--color-obsidian); }
-.hero__media { margin-top: var(--spacing-56); }
-.hero__media:empty { display: none; }
+
+/* Video de fondo: sobresale 30% por arriba para que el parallax nunca deje huecos */
+.hero__media { position: absolute; z-index: 0; top: -30%; right: 0; bottom: 0; left: 0; pointer-events: none; }
+.hero__video { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease; }
+.hero__video.is-ready { opacity: 1; }
+.hero__scrim { position: absolute; inset: 0; z-index: 1; background: var(--surface-dark-band); opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
+
+/* Con video/póster cargado: texto claro sobre velo oscuro (JS añade .hero--media) */
+.hero--media .hero__scrim { opacity: 0.45; }
+.hero--media .hero__logo, .hero--media .display, .hero--media .subhead, .hero--media .eyebrow { color: var(--color-pure-white); }
+.hero--media .eyebrow { opacity: 0.8; }
+.hero--media .btn--outline { border-color: var(--color-sky-signal); color: var(--color-sky-signal); }
+.hero--media .btn--outline:hover { background: var(--color-sky-signal); color: var(--color-carbon); }
 
 /* Nosotros */
 .about__points { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-24); margin-top: var(--spacing-56); text-align: center; }

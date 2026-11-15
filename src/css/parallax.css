@@ -1,6 +1,9 @@
-/* Capas de movimiento — pendiente de afinar en la siguiente etapa.
-   Reglas de accesibilidad: todo movimiento debe desactivarse con prefers-reduced-motion. */
+/* Capas de movimiento. El JS solo escribe transform/opacity (propiedades de compositor). */
+[data-parallax] { will-change: transform; backface-visibility: hidden; }
 
+/* Accesibilidad: sin movimiento si el usuario lo pide */
 @media (prefers-reduced-motion: reduce) {
-  [data-parallax] { transform: none !important; }
+  [data-parallax] { transform: none !important; opacity: 1 !important; will-change: auto; }
+  .hero__video, .hero__scrim { transition: none; }
+  html { scroll-behavior: auto; }
 }

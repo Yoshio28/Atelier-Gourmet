@@ -78,18 +78,31 @@
   <main id="contenido">
 
     <!-- HERO -->
-    <section id="inicio" class="section section--canvas hero">
-      <div class="container">
-        <svg class="hero__logo" role="img" aria-label="Logotipo Atelier Gourmet"><use href="#logo"/></svg>
-        <p class="eyebrow">Catering &amp; Food Concept</p>
-        <h1 class="display">Atelier Gourmet</h1>
-        <p class="subhead">Cocina para llevar, pensada para tu mesa y tus eventos.</p>
-        <div class="btn-pair">
+    <section id="inicio" class="section section--canvas hero" data-hero>
+      <!-- Capa 1 (fondo, la más lenta): video mudo en loop con poster.
+           Archivos esperados en assets/video/: hero-video.webm, hero-video.mp4, poster.jpg -->
+      <div class="hero__media" aria-hidden="true" data-parallax="0.35" data-parallax-mode="scroll">
+        <video class="hero__video" muted loop autoplay playsinline preload="metadata"
+               poster="assets/video/poster.jpg" disablepictureinpicture disableremoteplayback tabindex="-1">
+          <source src="assets/video/hero-video.webm" type="video/webm">
+          <source src="assets/video/hero-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <!-- Capa 2 (media): identidad y titular -->
+        <div class="hero__text" data-parallax="0.15" data-parallax-mode="scroll" data-parallax-fade>
+          <svg class="hero__logo" role="img" aria-label="Logotipo Atelier Gourmet"><use href="#logo"/></svg>
+          <p class="eyebrow">Catering &amp; Food Concept</p>
+          <h1 class="display">Atelier Gourmet</h1>
+          <p class="subhead">Cocina para llevar, pensada para tu mesa y tus eventos.</p>
+        </div>
+        <!-- Capa 3 (frente, la más cercana al scroll): acciones -->
+        <div class="btn-pair" data-parallax="0.05" data-parallax-mode="scroll">
           <a class="btn btn--primary" href="https://wa.me/526622445593?text=Hola%20Atelier%20Gourmet%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
           <a class="btn btn--outline" href="#menu">Ver menú</a>
         </div>
-        <!-- Pendiente: hero-video.mp4 + poster.jpg en assets/video/ -->
-        <div class="hero__media"></div>
       </div>
     </section>
 

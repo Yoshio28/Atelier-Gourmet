@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yoshio28.github.io/Atelier-Gourmet/sitemap.xml

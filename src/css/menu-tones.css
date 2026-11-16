@@ -1,53 +1,37 @@
-/* Bandas de color por categoría del menú (versión C · Temporada, colores definidos por el cliente).
-   Cada categoría es una banda a todo el ancho con su color exacto; los platillos van sobre una "hoja"
-   teñida del mismo color (plana, radio 0, filete 1px) para mantener contraste ≥ 6.5:1 en el texto.
-   Excepción documentada a DESIGN.md: colores de sección adicionales al pergamino. */
+/* Menú · versión C "Temporada": el fondo del menú cambia de tinte según la categoría visible
+   (main.js escribe .menu[data-cat]); cada categoría tiene además su acento propio.
+   Excepción documentada a DESIGN.md: tintes de fondo y acentos adicionales al pergamino/azafrán. */
 
-.course[data-cat="canapes"] { --c: #d8cbb8; --paper: #cfc3b1; --deep: #d49653; --rule-c: #aaa092; --flash: #bfb4a3; }  /* Pergamino */
-.menu[data-cat="canapes"] { --tab-accent: #d49653; }
-.course[data-cat="principales"] { --c: #c86b4a; --paper: #d4b099; --deep: #804c38; --rule-c: #ae927f; --flash: #cf967c; }  /* Terracota */
-.menu[data-cat="principales"] { --tab-accent: #c86b4a; }
-.course[data-cat="sides"] { --c: #f5e6a3; --paper: #e0d3b2; --deep: #999069; --rule-c: #b8ad92; --flash: #e8daac; }  /* Mantequilla */
-.menu[data-cat="sides"] { --tab-accent: #c9b45a; }  /* mantequilla tostada: visible sobre lino */
-.course[data-cat="ensaladas"] { --c: #9caf88; --paper: #c7c3ab; --deep: #68715a; --rule-c: #a4a08d; --flash: #b7bc9e; }  /* Salvia */
-.menu[data-cat="ensaladas"] { --tab-accent: #9caf88; }
-.course[data-cat="combos"] { --c: #d84a3a; --paper: #d8a795; --deep: #893a2f; --rule-c: #b28b7c; --flash: #d88473; }  /* Pimentón */
-.menu[data-cat="combos"] { --tab-accent: #d84a3a; }
-.course[data-cat="brunch"] { --c: #f2d3a2; --paper: #dfcdb2; --deep: #988568; --rule-c: #b7a892; --flash: #e6cfac; }  /* Yogurt y miel */
-.menu[data-cat="brunch"] { --tab-accent: #c89a52; }  /* miel: visible sobre lino */
-.course[data-cat="postres"] { --c: #c98a8a; --paper: #d4b9ab; --deep: #815d5b; --rule-c: #ae998d; --flash: #d0a79f; }  /* Rosa cacao */
-.menu[data-cat="postres"] { --tab-accent: #c98a8a; }
+.menu { --ink: var(--color-onyx-warm); --ink-soft: var(--color-espresso); background: var(--menu-tone, var(--color-parchment)); transition: background-color 0.6s var(--ease); }
+.menu[data-cat="canapes"] { --menu-tone: #d8cbb8; --accent: #d49653; --rule-c: #b6ab9c; --flash: #c0b5a4; }  /* pergamino */
+.menu[data-cat="principales"] { --menu-tone: #d6b8a0; --accent: #9c4f2c; --rule-c: #bf9f86; --flash: #bea490; }  /* cobre / terracota */
+.menu[data-cat="sides"] { --menu-tone: #e0cfa0; --accent: #9a6e10; --rule-c: #c7b585; --flash: #c7b890; }  /* mantequilla */
+.menu[data-cat="ensaladas"] { --menu-tone: #c3c8a8; --accent: #56662f; --rule-c: #a8ad8c; --flash: #aeb297; }  /* salvia */
+.menu[data-cat="combos"] { --menu-tone: #dbb3a5; --accent: #a2412c; --rule-c: #c29b8d; --flash: #c2a094; }  /* tomate / pimentón */
+.menu[data-cat="brunch"] { --menu-tone: #e7dcc8; --accent: #b07a35; --rule-c: #cbbfa9; --flash: #cdc3b2; }  /* yogurt y miel */
+.menu[data-cat="postres"] { --menu-tone: #dcc1bd; --accent: #874650; --rule-c: #c2a5a1; --flash: #c3aca9; }  /* cacao / rosa */
 
-.course { position: relative; isolation: isolate; border-bottom: 0; padding-bottom: var(--spacing-92); }
-.course::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw); right: calc(50% - 50vw); background: var(--c); }
+.menu .h-display, .menu .course__title, .menu .course__note, .menu .course__num,
+.menu .dish__name, .menu .dish__price, .menu .dish__desc, .menu .dish__meta, .menu .text-link { color: var(--ink); }
+.menu .menu__intro .label, .menu .menu__lede { color: var(--ink-soft); }
 
-/* Columna lateral: título grande sobre el color; textos pequeños en etiquetas pergamino */
-.course__title { color: var(--color-onyx-warm); }
-.course__num, .course__note { justify-self: start; padding: 5px 10px; background: var(--color-parchment); border-radius: var(--radius-tags); color: var(--color-onyx-warm); }
-.course__num::before { background: var(--deep); }
-.course__aside::after { content: ''; width: 56px; height: 2px; margin-top: var(--spacing-8); background: var(--deep); }
+.menu .course, .menu .dish { border-color: var(--rule-c); transition: border-color 0.6s var(--ease); }
+.menu .dish__leader { border-bottom: 2px dotted var(--accent); }
+.menu .course__num::before { background: var(--accent); }
+.menu .course__aside::after { content: ''; width: 56px; height: 2px; margin-top: var(--spacing-8); background: var(--accent); transition: background-color 0.6s var(--ease); }
+.menu .menu-category-tab.is-active::after { background-color: var(--accent); transition: background-color var(--dur) var(--ease); }
 
-/* Hoja de papel con los platillos */
-.course__list { align-self: start; padding: var(--spacing-4) var(--spacing-28) var(--spacing-20); background: var(--paper); border: 1px solid var(--rule-c); border-radius: var(--radius-cards); }
-.course .dish { border-top-color: var(--rule-c); }
-.course .dish:nth-child(-n+2) { border-top-color: transparent; }
-.course .dish__leader { border-bottom: 2px dotted var(--deep); }
-.course .dish::before { background: var(--flash); inset: 0 calc(var(--spacing-12) * -1); }
-.course .add-link:hover, .course .add-link.is-added { background: var(--color-onyx-warm); color: var(--paper); }
-.course .add-link__check { color: var(--flash); }
-
-/* Pestaña activa: la barra toma el color de la categoría actual */
-.menu .menu-category-tab.is-active::after { background-color: var(--tab-accent, var(--color-saffron-glow)); transition: background-color var(--dur) var(--ease); }
-
-@media (max-width: 900px) {
-  .course .dish:nth-child(2) { border-top-color: var(--rule-c); }
-}
-@media (max-width: 640px) {
-  .course { padding-bottom: var(--spacing-52); }
-  .course__list { padding: var(--spacing-4) var(--spacing-20) var(--spacing-12); }
-}
+.menu .add-link { color: var(--ink); border-color: var(--ink); }
+.menu .add-link:hover, .menu .add-link.is-added { background: var(--ink); color: var(--menu-tone, var(--color-parchment)); }
+.menu .add-link__check { color: var(--accent); }
+.menu .btn--ink:hover { color: var(--menu-tone, var(--color-parchment)); }
+.menu .dish::before { background: var(--flash); }
 
 /* Platillos con variantes (Chico / Grande): precios en su propia línea y botones debajo */
 .dish__foot:has(.add-link + .add-link) { flex-direction: column; align-items: stretch; }
 .dish__foot:has(.add-link + .add-link) .dish__add { margin-left: 0; }
 .dish__foot:has(.add-link + .add-link) .add-link { flex: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .menu, .menu .course, .menu .dish, .menu .course__aside::after, .menu .menu-category-tab.is-active::after { transition: none; }
+}

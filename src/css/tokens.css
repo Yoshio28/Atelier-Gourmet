@@ -16,6 +16,7 @@
   --color-midnight-roast: #292622;
   --color-saffron-glow: #d49653;
   --overlay-roast: rgba(41, 38, 34, 0.78);   /* velo sobre fotografía/video */
+  --tone-parchment-linen: #ccc0ae;           /* 50% pergamino + 50% lino: cambio de tono entre secciones del menú */
 
   /* Tipografía */
   --font-display: 'Cormorant Garamond', 'TT Ramillas Variable', Georgia, 'Times New Roman', serif;

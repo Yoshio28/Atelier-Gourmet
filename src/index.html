@@ -182,7 +182,7 @@
         </nav>
         <section id="canapes" class="course" aria-labelledby="canapes-t">
           <div class="course__aside">
-            <span class="label">01</span>
+            <span class="label course__num">01</span>
             <h3 id="canapes-t" class="course__title">Canapés</h3>
             <p class="label course__note">Porciones de 10 piezas</p>
           </div>
@@ -216,7 +216,7 @@
         </section>
         <section id="principales" class="course" aria-labelledby="principales-t">
           <div class="course__aside">
-            <span class="label">02</span>
+            <span class="label course__num">02</span>
             <h3 id="principales-t" class="course__title">Principales</h3>
             
           </div>
@@ -250,7 +250,7 @@
         </section>
         <section id="sides" class="course" aria-labelledby="sides-t">
           <div class="course__aside">
-            <span class="label">03</span>
+            <span class="label course__num">03</span>
             <h3 id="sides-t" class="course__title">Sides</h3>
             <p class="label course__note">Guarniciones</p>
           </div>
@@ -284,7 +284,7 @@
         </section>
         <section id="ensaladas" class="course" aria-labelledby="ensaladas-t">
           <div class="course__aside">
-            <span class="label">04</span>
+            <span class="label course__num">04</span>
             <h3 id="ensaladas-t" class="course__title">Ensaladas</h3>
             
           </div>
@@ -308,7 +308,7 @@
         </section>
         <section id="combos" class="course" aria-labelledby="combos-t">
           <div class="course__aside">
-            <span class="label">05</span>
+            <span class="label course__num">05</span>
             <h3 id="combos-t" class="course__title">Combos</h3>
             <p class="label course__note">Pedido mínimo 10 personas</p>
           </div>
@@ -332,7 +332,7 @@
         </section>
         <section id="brunch" class="course" aria-labelledby="brunch-t">
           <div class="course__aside">
-            <span class="label">06</span>
+            <span class="label course__num">06</span>
             <h3 id="brunch-t" class="course__title">Brunch To Go</h3>
             
           </div>
@@ -366,7 +366,7 @@
         </section>
         <section id="postres" class="course" aria-labelledby="postres-t">
           <div class="course__aside">
-            <span class="label">07</span>
+            <span class="label course__num">07</span>
             <h3 id="postres-t" class="course__title">Postres</h3>
             
           </div>
@@ -517,6 +517,10 @@
     </footer>
   </aside>
   <p class="visually-hidden" aria-live="polite" data-cart-live></p>
+  <div class="toast" data-toast aria-hidden="true">
+    <span class="toast__text"><span class="toast__check">✓</span> <strong data-toast-name></strong> agregado</span>
+    <button class="toast__btn" type="button" data-cart-open aria-controls="cart" aria-expanded="false" tabindex="-1">Ver pedido</button>
+  </div>
 
   <script src="js/main.js" defer></script>
   <script src="js/parallax.js" defer></script>

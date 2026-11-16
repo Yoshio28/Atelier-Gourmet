@@ -98,8 +98,36 @@
     render();
   }
 
+  /* ---- Confirmación visible al agregar ---- */
+  var toast = $('[data-toast]');
+  var toastTimer;
+  function showAdded(btn, name) {
+    if (!btn.dataset.label) { btn.dataset.label = btn.textContent; }
+    clearTimeout(btn._t);
+    btn.classList.add('is-added');
+    btn.innerHTML = '<span class="add-link__check" aria-hidden="true">✓</span> Agregado';
+    btn._t = setTimeout(function () { btn.textContent = btn.dataset.label; btn.classList.remove('is-added'); }, 1600);
+    var dish = btn.closest('.dish');
+    if (dish) { dish.classList.remove('is-added'); void dish.offsetWidth; dish.classList.add('is-added'); }
+    if (toast) {
+      $('[data-toast-name]', toast).textContent = name;
+      toast.classList.add('is-visible');
+      toast.setAttribute('aria-hidden', 'false');
+      $('.toast__btn', toast).tabIndex = 0;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(hideToast, 3200);
+    }
+  }
+  function hideToast() {
+    if (!toast) { return; }
+    toast.classList.remove('is-visible');
+    toast.setAttribute('aria-hidden', 'true');
+    $('.toast__btn', toast).tabIndex = -1;
+  }
+
   /* ---- Abrir / cerrar ---- */
   function open() {
+    hideToast();
     lastFocus = document.activeElement;
     overlay.hidden = drawer.hidden = false;
     requestAnimationFrame(function () { document.documentElement.classList.add('cart-open'); });
@@ -122,10 +150,7 @@
       if (it) { it.qty += 1; } else { cart.push({ id: d.id, name: d.name, unit: d.unit, price: +d.price, min: min, qty: min }); }
       render();
       live.textContent = d.name + ' agregado al pedido.';
-      t.classList.add('is-added');
-      var label = t.textContent;
-      t.textContent = 'Agregado ✓';
-      setTimeout(function () { t.textContent = label; t.classList.remove('is-added'); }, 1200);
+      showAdded(t, d.name);
       $$('.cart-count').forEach(function (c) { c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump'); });
       return;
     }

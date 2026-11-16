@@ -19,10 +19,16 @@
   if (tabs.length && hasIO) {
     var byId = {};
     var bar = document.querySelector('.menu__tabs');
+    var menu = document.querySelector('.menu');
+    var courses = Array.prototype.slice.call(document.querySelectorAll('.course'));
     var tabObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) { return; }
         tabs.forEach(function (a) { a.classList.remove('is-active'); });
+        // tono alterno por sección + marca de sección actual
+        var i = courses.indexOf(e.target);
+        courses.forEach(function (c) { c.classList.toggle('is-current', c === e.target); });
+        if (menu && i > -1) { menu.dataset.tone = i % 2 ? 'alt' : 'base'; }
         var a = byId[e.target.id];
         if (a) {
           a.classList.add('is-active');

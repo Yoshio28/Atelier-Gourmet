@@ -8,6 +8,8 @@ Sitio estático (HTML/CSS/JS sin framework) para Atelier Gourmet, Hermosillo, So
   - Display: Cormorant Garamond 300 en MAYÚSCULAS (sustituto de TT Ramillas; nunca en negrita, nunca < 22px). UI/cuerpo: Manrope 500/700 (sustituto de Satoshi). Fuentes autoalojadas en `src/assets/fonts`.
   - Tarjetas/secciones/imágenes con radio 0; 3px solo en botones, inputs y etiquetas. Filetes de 1px `#b6ab9c` como separadores. Sin sombras ni degradados (salvo el velo oscuro sobre fotografía/video).
   - Botones solo ghost/outlined o de texto; nada de botones rellenos de color. Párrafos alineados a la izquierda.
+  - Excepción aprobada por el cliente (versión C · Temporada): cada categoría del menú es una banda a todo el ancho con su color propio (`src/css/menu-tones.css`): Principales #C86B4A, Sides #F5E6A3, Ensaladas #9CAF88, Combos #D84A3A, Brunch #F2D3A2, Postres #C98A8A; Canapés en pergamino. Los platillos van sobre una hoja teñida del mismo color para mantener contraste ≥ 6.5:1.
+  - Assets versionados (`?v=N` en CSS/JS de index.html): súbelo en cada despliegue para evitar caché de GitHub Pages.
   - Movimiento: 0.4s con cubic-bezier(0.25, 0.46, 0.45, 0.94); marquesina de platillos 27s lineal. Parallax solo en las capas del hero (petición del cliente). Todo se desactiva con prefers-reduced-motion.
 - Regla estricta de contenido: nunca inventar precios, premios, historia ni datos específicos. Solo usar lo que consta en las fuentes del negocio. Las reseñas deben ser textuales.
 - Teléfono: `tel:+526622445593`. WhatsApp: `https://wa.me/526622445593?text=…` con mensaje precodificado.

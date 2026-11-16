@@ -41,10 +41,10 @@
   <link rel="preload" as="image" href="assets/video/poster.jpg" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-500.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-300.woff2" crossorigin>
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/parallax.css">
-  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/tokens.css?v=7">
+  <link rel="stylesheet" href="css/main.css?v=7">
+  <link rel="stylesheet" href="css/parallax.css?v=7">
+  <link rel="stylesheet" href="css/menu-tones.css?v=7">
 
   <!-- Schema.org: solo datos verificados en esta página -->
   <script type="application/ld+json">
@@ -181,7 +181,7 @@
         <nav class="menu__tabs menu-category-nav" aria-label="Categorías del menú">
           <a class="menu-category-tab" href="#canapes" data-label="Canapés">Canapés</a><a class="menu-category-tab" href="#principales" data-label="Principales">Principales</a><a class="menu-category-tab" href="#sides" data-label="Sides">Sides</a><a class="menu-category-tab" href="#ensaladas" data-label="Ensaladas">Ensaladas</a><a class="menu-category-tab" href="#combos" data-label="Combos">Combos</a><a class="menu-category-tab" href="#brunch" data-label="Brunch">Brunch</a><a class="menu-category-tab" href="#postres" data-label="Postres">Postres</a>
         </nav>
-        <section id="canapes" class="course" aria-labelledby="canapes-t">
+        <section id="canapes" class="course" data-cat="canapes" aria-labelledby="canapes-t">
           <div class="course__aside">
             <span class="label course__num">01</span>
             <h3 id="canapes-t" class="course__title">Canapés</h3>
@@ -215,7 +215,7 @@
               </li>
           </ul>
         </section>
-        <section id="principales" class="course" aria-labelledby="principales-t">
+        <section id="principales" class="course" data-cat="principales" aria-labelledby="principales-t">
           <div class="course__aside">
             <span class="label course__num">02</span>
             <h3 id="principales-t" class="course__title">Principales</h3>
@@ -249,7 +249,7 @@
               </li>
           </ul>
         </section>
-        <section id="sides" class="course" aria-labelledby="sides-t">
+        <section id="sides" class="course" data-cat="sides" aria-labelledby="sides-t">
           <div class="course__aside">
             <span class="label course__num">03</span>
             <h3 id="sides-t" class="course__title">Sides</h3>
@@ -283,7 +283,7 @@
               </li>
           </ul>
         </section>
-        <section id="ensaladas" class="course" aria-labelledby="ensaladas-t">
+        <section id="ensaladas" class="course" data-cat="ensaladas" aria-labelledby="ensaladas-t">
           <div class="course__aside">
             <span class="label course__num">04</span>
             <h3 id="ensaladas-t" class="course__title">Ensaladas</h3>
@@ -307,7 +307,7 @@
               </li>
           </ul>
         </section>
-        <section id="combos" class="course" aria-labelledby="combos-t">
+        <section id="combos" class="course" data-cat="combos" aria-labelledby="combos-t">
           <div class="course__aside">
             <span class="label course__num">05</span>
             <h3 id="combos-t" class="course__title">Combos</h3>
@@ -331,7 +331,7 @@
               </li>
           </ul>
         </section>
-        <section id="brunch" class="course" aria-labelledby="brunch-t">
+        <section id="brunch" class="course" data-cat="brunch" aria-labelledby="brunch-t">
           <div class="course__aside">
             <span class="label course__num">06</span>
             <h3 id="brunch-t" class="course__title">Brunch To Go</h3>
@@ -365,7 +365,7 @@
               </li>
           </ul>
         </section>
-        <section id="postres" class="course" aria-labelledby="postres-t">
+        <section id="postres" class="course" data-cat="postres" aria-labelledby="postres-t">
           <div class="course__aside">
             <span class="label course__num">07</span>
             <h3 id="postres-t" class="course__title">Postres</h3>
@@ -523,8 +523,8 @@
     <button class="toast__btn" type="button" data-cart-open aria-controls="cart" aria-expanded="false" tabindex="-1">Ver pedido</button>
   </div>
 
-  <script src="js/main.js" defer></script>
-  <script src="js/parallax.js" defer></script>
-  <script src="js/cart.js" defer></script>
+  <script src="js/main.js?v=7" defer></script>
+  <script src="js/parallax.js?v=7" defer></script>
+  <script src="js/cart.js?v=7" defer></script>
 </body>
 </html>

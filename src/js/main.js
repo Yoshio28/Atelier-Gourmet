@@ -3,21 +3,6 @@
   'use strict';
   var hasIO = 'IntersectionObserver' in window;
 
-  /* ---- Temas experimentales del menú: ?tema=tostado | temporada ---- */
-  var TEMAS = { actual: 'Actual', tostado: 'Tostado', temporada: 'Temporada' };
-  var params = new URLSearchParams(location.search);
-  var tema = params.get('tema');
-  if (tema && TEMAS[tema]) {
-    if (tema !== 'actual') { document.documentElement.dataset.tema = tema; }
-    var sw = document.createElement('nav');
-    sw.className = 'tema-switch';
-    sw.setAttribute('aria-label', 'Comparar temas del menú');
-    sw.innerHTML = '<span>Tema</span>' + Object.keys(TEMAS).map(function (k) {
-      return '<a href="?tema=' + k + '#menu"' + (k === tema ? ' aria-current="true"' : '') + '>' + TEMAS[k] + '</a>';
-    }).join('');
-    document.body.appendChild(sw);
-  }
-
   /* ---- Navegación: transparente sobre el hero, pergamino después ---- */
   var nav = document.querySelector('[data-nav]');
   var hero = document.querySelector('[data-hero]');
@@ -50,7 +35,7 @@
       var sec = document.getElementById(id);
       var i = courses.indexOf(sec);
       courses.forEach(function (c) { c.classList.toggle('is-current', c === sec); });
-      if (menu && i > -1) { menu.dataset.tone = i % 2 ? 'alt' : 'base'; menu.dataset.cat = id; }
+      if (menu && i > -1) { menu.dataset.cat = id; }
       // centrar la pestaña activa solo dentro de la barra (sin mover la página)
       if (bar.scrollWidth > bar.clientWidth) {
         bar.scrollTo({ left: a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2, behavior: calm.matches ? 'auto' : 'smooth' });

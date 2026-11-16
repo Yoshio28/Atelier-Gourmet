@@ -61,9 +61,9 @@ button { font: inherit; color: inherit; }
 .nav__actions { margin-left: auto; display: flex; align-items: center; gap: var(--spacing-24); }
 .nav__tel { font-size: var(--text-body-sm); letter-spacing: var(--tracking-body-sm); }
 .nav__cart { min-height: 40px; padding: 10px 18px; border-color: currentColor; color: inherit; }
-.nav__cart:hover { background: currentColor; }
-.nav__cart:hover > * , .nav__cart:hover { color: var(--color-midnight-roast); }
-.nav--solid .nav__cart:hover { color: var(--color-parchment); }
+/* hover con colores explícitos (antes: fondo = currentColor ocultaba el texto) */
+.nav__cart:hover { background: var(--color-parchment); border-color: var(--color-parchment); color: var(--color-midnight-roast); }
+.nav--solid .nav__cart:hover { background: var(--color-onyx-warm); border-color: var(--color-onyx-warm); color: var(--color-parchment); }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; isolation: isolate; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; background: var(--color-midnight-roast); color: var(--color-parchment); }
@@ -104,11 +104,7 @@ button { font: inherit; color: inherit; }
 .pillars p { color: var(--color-espresso); font-size: var(--text-body-sm); }
 
 /* ---------- Menú ---------- */
-.menu { background: var(--menu-tone, var(--color-parchment)); transition: background-color var(--dur) var(--ease); }
-.menu[data-tone="alt"] { --menu-tone: var(--color-linen); }
-/* sobre lino: filetes y destello un paso más contrastados para que sigan visibles */
-.menu[data-tone="alt"] .dish, .menu[data-tone="alt"] .course { border-color: var(--color-walnut); }
-.menu[data-tone="alt"] .dish::before { background: var(--color-parchment); }
+.menu { background: var(--color-parchment); overflow-x: clip; }
 .menu__intro { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--spacing-16) var(--spacing-42); }
 .menu__intro .label { grid-column: 1 / -1; }
 .menu__intro .h-display { margin-top: 0; }
@@ -279,8 +275,8 @@ button { font: inherit; color: inherit; }
 }
 
 /* Aviso al agregar al pedido */
-.toast { position: fixed; z-index: 80; left: 50%; bottom: var(--spacing-24); display: flex; align-items: center; gap: var(--spacing-20); max-width: calc(100% - 2 * var(--gutter)); padding: 14px 16px 14px 20px; background: var(--color-onyx-warm); color: var(--color-parchment); border-radius: var(--radius-sm); font-size: var(--text-body-sm); transform: translate(-50%, calc(100% + 40px)); transition: transform var(--dur) var(--ease); }
-.toast.is-visible { transform: translate(-50%, 0); }
+.toast { position: fixed; z-index: 80; left: 50%; bottom: var(--spacing-24); display: flex; align-items: center; gap: var(--spacing-20); max-width: calc(100% - 2 * var(--gutter)); padding: 14px 16px 14px 20px; background: var(--color-onyx-warm); color: var(--color-parchment); border-radius: var(--radius-sm); font-size: var(--text-body-sm); transform: translate(-50%, calc(100% + 40px)); opacity: 0; visibility: hidden; transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), visibility 0s linear var(--dur); }
+.toast.is-visible { transform: translate(-50%, 0); opacity: 1; visibility: visible; transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), visibility 0s; }
 .toast__check { color: var(--color-saffron-glow); }
 .toast__text strong { font-weight: var(--font-weight-bold); }
 .toast__btn { flex-shrink: 0; min-height: 36px; padding: 8px 14px; border: 1px solid var(--color-parchment); border-radius: var(--radius-buttons); background: transparent; color: var(--color-parchment); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }

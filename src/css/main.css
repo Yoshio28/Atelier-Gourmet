@@ -105,7 +105,10 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Menú ---------- */
 .menu { background: var(--menu-tone, var(--color-parchment)); transition: background-color var(--dur) var(--ease); }
-.menu[data-tone="alt"] { --menu-tone: var(--tone-parchment-linen); }
+.menu[data-tone="alt"] { --menu-tone: var(--color-linen); }
+/* sobre lino: filetes y destello un paso más contrastados para que sigan visibles */
+.menu[data-tone="alt"] .dish, .menu[data-tone="alt"] .course, .menu[data-tone="alt"] .menu__tabs { border-color: var(--color-walnut); }
+.menu[data-tone="alt"] .dish::before { background: var(--color-parchment); }
 .menu__intro { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--spacing-16) var(--spacing-42); }
 .menu__intro .label { grid-column: 1 / -1; }
 .menu__intro .h-display { margin-top: 0; }

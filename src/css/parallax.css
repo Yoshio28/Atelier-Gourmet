@@ -12,5 +12,5 @@
   .cart, .cart-overlay, .btn, .nav { transition: none; }
   .cart-count.bump { animation: none; }
   .dish.is-added::before { animation: none; }
-  .menu, .menu__tabs, .toast, .add-link, .course__num::before { transition: none; }
+  .menu, .menu-category-tab, .toast, .add-link, .course__num::before { transition: none; }
 }

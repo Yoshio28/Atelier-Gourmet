@@ -107,17 +107,21 @@ button { font: inherit; color: inherit; }
 .menu { background: var(--menu-tone, var(--color-parchment)); transition: background-color var(--dur) var(--ease); }
 .menu[data-tone="alt"] { --menu-tone: var(--color-linen); }
 /* sobre lino: filetes y destello un paso más contrastados para que sigan visibles */
-.menu[data-tone="alt"] .dish, .menu[data-tone="alt"] .course, .menu[data-tone="alt"] .menu__tabs { border-color: var(--color-walnut); }
+.menu[data-tone="alt"] .dish, .menu[data-tone="alt"] .course { border-color: var(--color-walnut); }
 .menu[data-tone="alt"] .dish::before { background: var(--color-parchment); }
 .menu__intro { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--spacing-16) var(--spacing-42); }
 .menu__intro .label { grid-column: 1 / -1; }
 .menu__intro .h-display { margin-top: 0; }
 .menu__lede { max-width: 34ch; color: var(--color-espresso); }
-.menu__tabs { position: sticky; top: var(--nav-height); z-index: 10; display: flex; gap: var(--spacing-28); overflow-x: auto; margin: var(--spacing-52) calc(var(--gutter) * -1) 0; padding: var(--spacing-16) var(--gutter); background: var(--menu-tone, var(--color-parchment)); transition: background-color var(--dur) var(--ease); border-top: var(--rule); border-bottom: var(--rule); scrollbar-width: none; }
+/* Navegación de categorías (instructions.md): la barra siempre sobre pergamino; la pestaña activa sube a lino */
+.menu__tabs { position: sticky; top: var(--nav-height); z-index: 10; display: flex; gap: var(--spacing-8); overflow-x: auto; margin: var(--spacing-52) calc(var(--gutter) * -1) 0; padding: var(--spacing-12) var(--gutter); background: var(--color-parchment); border-top: var(--rule); border-bottom: var(--rule); scrollbar-width: none; }
 .menu__tabs::-webkit-scrollbar { display: none; }
-.menu__tabs a { flex-shrink: 0; font-size: var(--text-body-sm); letter-spacing: 0.02em; text-transform: uppercase; color: var(--color-onyx-warm); padding: 8px 0; border-bottom: 2px solid transparent; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
-.menu__tabs a:hover { border-bottom-color: var(--color-warm-stone); }
-.menu__tabs a.is-active { font-weight: var(--font-weight-bold); border-bottom-color: var(--color-saffron-glow); }
+.menu-category-tab { position: relative; flex-shrink: 0; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; white-space: nowrap; background-color: transparent; color: var(--color-espresso); font-family: var(--font-sans); font-weight: var(--font-weight-medium); font-size: var(--text-body-sm); line-height: 1; text-transform: uppercase; letter-spacing: -0.01em; text-decoration: none; padding: 10px 16px; border: 1px solid transparent; border-radius: var(--radius-buttons); box-shadow: none; transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+/* reserva el ancho de la versión en negrita: el cambio a 700 nunca desplaza las demás pestañas */
+.menu-category-tab::before { content: attr(data-label); font-weight: var(--font-weight-bold); height: 0; overflow: hidden; visibility: hidden; }
+.menu-category-tab:hover:not(.is-active) { color: var(--color-onyx-warm); border-color: var(--color-warm-stone); }
+.menu-category-tab.is-active { background-color: var(--color-linen); color: var(--color-onyx-warm); font-weight: var(--font-weight-bold); border-color: var(--color-warm-stone); box-shadow: none; }
+.menu-category-tab.is-active::after { content: ''; position: absolute; bottom: 0; left: 12px; right: 12px; height: 2px; background-color: var(--color-saffron-glow); }
 
 .course { display: grid; grid-template-columns: 4fr 8fr; gap: var(--spacing-42); padding: var(--spacing-92) 0 var(--spacing-42); border-bottom: var(--rule); scroll-margin-top: calc(var(--nav-height) + 60px); }
 .course__aside { position: sticky; top: calc(var(--nav-height) + 92px); align-self: start; display: grid; gap: var(--spacing-12); }
@@ -263,6 +267,7 @@ button { font: inherit; color: inherit; }
   .pillars li + li { padding-left: 0; border-left: 0; border-top: var(--rule); }
   .pillars li { padding-bottom: var(--spacing-20); }
   .dish__name { font-size: 24px; }
+  .menu-category-tab { font-size: var(--text-caption); padding: 10px 14px; }
   .dish__foot { flex-wrap: wrap; }
   .score { flex-direction: column; align-items: flex-start; gap: var(--spacing-16); }
   .map { aspect-ratio: 4 / 5; }

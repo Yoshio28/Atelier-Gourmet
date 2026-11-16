@@ -14,35 +14,49 @@
     nav.classList.add('nav--solid');
   }
 
-  /* ---- Pestaña activa del menú ---- */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.menu__tabs a'));
-  if (tabs.length && hasIO) {
-    var byId = {};
-    var bar = document.querySelector('.menu__tabs');
+  /* ---- Navegación de categorías: ScrollSpy + clic + autocentrado ---- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.menu-category-tab'));
+  if (tabs.length) {
+    var bar = document.querySelector('.menu-category-nav');
     var menu = document.querySelector('.menu');
     var courses = Array.prototype.slice.call(document.querySelectorAll('.course'));
-    var tabObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) { return; }
-        tabs.forEach(function (a) { a.classList.remove('is-active'); });
-        // tono alterno por sección + marca de sección actual
-        var i = courses.indexOf(e.target);
-        courses.forEach(function (c) { c.classList.toggle('is-current', c === e.target); });
-        if (menu && i > -1) { menu.dataset.tone = i % 2 ? 'alt' : 'base'; }
-        var a = byId[e.target.id];
-        if (a) {
-          a.classList.add('is-active');
-          // desplaza solo la barra de pestañas (no la página)
-          bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.offsetWidth / 2 });
-        }
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var byId = {};
+    var lockUntil = 0;
+
+    var setActive = function (id) {
+      var a = byId[id];
+      if (!a || a.classList.contains('is-active')) { return; }
+      tabs.forEach(function (t) {
+        var on = t === a;
+        t.classList.toggle('is-active', on);
+        if (on) { t.setAttribute('aria-current', 'true'); } else { t.removeAttribute('aria-current'); }
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
+      var sec = document.getElementById(id);
+      var i = courses.indexOf(sec);
+      courses.forEach(function (c) { c.classList.toggle('is-current', c === sec); });
+      if (menu && i > -1) { menu.dataset.tone = i % 2 ? 'alt' : 'base'; }
+      // centrar la pestaña activa solo dentro de la barra (sin mover la página)
+      if (bar.scrollWidth > bar.clientWidth) {
+        bar.scrollTo({ left: a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2, behavior: calm.matches ? 'auto' : 'smooth' });
+      }
+    };
+
     tabs.forEach(function (a) {
       var id = a.getAttribute('href').slice(1);
-      var sec = document.getElementById(id);
       byId[id] = a;
-      if (sec) { tabObserver.observe(sec); }
+      // clic: estado activo inmediato; se ignora el ScrollSpy mientras dura el desplazamiento
+      a.addEventListener('click', function () { lockUntil = Date.now() + 1200; setActive(id); });
     });
+    window.addEventListener('scrollend', function () { lockUntil = 0; });
+
+    if (hasIO) {
+      var spy = new IntersectionObserver(function (entries) {
+        if (Date.now() < lockUntil) { return; }
+        entries.forEach(function (e) { if (e.isIntersecting) { setActive(e.target.id); } });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      courses.forEach(function (c) { spy.observe(c); });
+    }
   }
 
   /* ---- Video del hero ---- */

@@ -1,0 +1,68 @@
+/* Temas experimentales del menú — solo activos con ?tema=tostado | ?tema=temporada
+   (main.js añade html[data-tema]). Sin el parámetro, el sitio usa el diseño base.
+   NOTA: rompen a propósito dos reglas de DESIGN.md (tonos de fondo adicionales y un acento por categoría). */
+
+html[data-tema] .menu {
+  --ink: var(--color-onyx-warm);
+  --ink-soft: var(--color-espresso);
+  --rule-c: var(--color-warm-stone);
+  --accent: var(--color-saffron-glow);
+  --menu-tone: var(--color-parchment);
+  background: var(--menu-tone);
+  transition: background-color 0.6s var(--ease);
+}
+
+/* ---------- B + E · TOSTADO PROGRESIVO ---------- */
+html[data-tema="tostado"] .menu[data-cat="principales"] { --menu-tone: #cebda5; --accent: #c07a45; --rule-c: #b3a28a; }
+html[data-tema="tostado"] .menu[data-cat="sides"]       { --menu-tone: #c4af91; --accent: #a8672f; --rule-c: #a8957a; }
+html[data-tema="tostado"] .menu[data-cat="ensaladas"]   { --menu-tone: #b8a07e; --accent: #7d5a2c; --rule-c: #9b8566; --ink-soft: var(--color-onyx-warm); }
+html[data-tema="tostado"] .menu[data-cat="combos"]      { --menu-tone: #ab916c; --accent: #5e3d1e; --rule-c: #8f7756; --ink-soft: var(--color-onyx-warm); }
+html[data-tema="tostado"] .menu[data-cat="brunch"]      { --menu-tone: #4a3c30; --accent: #e0a867; --rule-c: rgba(216, 203, 184, 0.24); --ink: var(--color-parchment); --ink-soft: var(--color-linen); }
+html[data-tema="tostado"] .menu[data-cat="postres"]     { --menu-tone: #2e2520; --accent: #d99a8f; --rule-c: rgba(216, 203, 184, 0.22); --ink: var(--color-parchment); --ink-soft: var(--color-linen); }
+
+/* ---------- C · TEMPORADA (tinte por ingrediente) ---------- */
+html[data-tema="temporada"] .menu[data-cat="principales"] { --menu-tone: #d6b8a0; --accent: #9c4f2c; --rule-c: #bf9f86; }  /* cobre / terracota */
+html[data-tema="temporada"] .menu[data-cat="sides"]       { --menu-tone: #e0cfa0; --accent: #9a6e10; --rule-c: #c7b585; }  /* mantequilla */
+html[data-tema="temporada"] .menu[data-cat="ensaladas"]   { --menu-tone: #c3c8a8; --accent: #56662f; --rule-c: #a8ad8c; }  /* salvia */
+html[data-tema="temporada"] .menu[data-cat="combos"]      { --menu-tone: #dbb3a5; --accent: #a2412c; --rule-c: #c29b8d; }  /* tomate / pimentón */
+html[data-tema="temporada"] .menu[data-cat="brunch"]      { --menu-tone: #e7dcc8; --accent: #b07a35; --rule-c: #cbbfa9; }  /* yogurt y miel */
+html[data-tema="temporada"] .menu[data-cat="postres"]     { --menu-tone: #dcc1bd; --accent: #874650; --rule-c: #c2a5a1; }  /* cacao / rosa */
+
+/* ---------- Aplicación común de las variables ---------- */
+html[data-tema] .menu .h-display,
+html[data-tema] .menu .course__title,
+html[data-tema] .menu .course__note,
+html[data-tema] .menu .course__num,
+html[data-tema] .menu .dish__name,
+html[data-tema] .menu .dish__price,
+html[data-tema] .menu .dish__desc,
+html[data-tema] .menu .dish__meta,
+html[data-tema] .menu .text-link { color: var(--ink); transition: color 0.6s var(--ease); }
+html[data-tema] .menu .menu__intro .label,
+html[data-tema] .menu .menu__lede { color: var(--ink-soft); }
+
+html[data-tema] .menu .course,
+html[data-tema] .menu .dish { border-color: var(--rule-c); transition: border-color 0.6s var(--ease); }
+html[data-tema] .menu .dish__leader { border-bottom-color: var(--accent); border-bottom-width: 2px; }
+html[data-tema] .menu .course__num::before { background: var(--accent); }
+html[data-tema] .menu .course__aside::after { content: ''; width: 56px; height: 2px; margin-top: var(--spacing-8); background: var(--accent); transition: background-color 0.6s var(--ease); }
+html[data-tema] .menu .menu-category-tab.is-active::after { background-color: var(--accent); }
+
+html[data-tema] .menu .add-link { color: var(--ink); border-color: var(--ink); }
+html[data-tema] .menu .add-link:hover,
+html[data-tema] .menu .add-link.is-added { background: var(--ink); color: var(--menu-tone); }
+html[data-tema] .menu .add-link__check { color: var(--accent); }
+html[data-tema] .menu .btn--ink { color: var(--ink); border-color: var(--ink); }
+html[data-tema] .menu .btn--ink:hover { background: var(--ink); color: var(--menu-tone); }
+html[data-tema] .menu .dish::before { background: color-mix(in srgb, var(--menu-tone) 70%, var(--ink) 12%); }
+
+/* ---------- Selector de tema (solo en modo comparación) ---------- */
+.tema-switch { position: fixed; z-index: 85; left: var(--spacing-16); bottom: var(--spacing-16); display: flex; align-items: center; gap: 2px; padding: 4px; background: var(--color-onyx-warm); border-radius: var(--radius-sm); font-size: var(--text-label); text-transform: uppercase; letter-spacing: 0.04em; }
+.tema-switch span { color: var(--color-walnut); padding: 0 8px 0 6px; }
+.tema-switch a { color: var(--color-parchment); padding: 8px 10px; border-radius: var(--radius-sm); border: 1px solid transparent; }
+.tema-switch a[aria-current] { border-color: var(--color-parchment); }
+@media (max-width: 640px) { .tema-switch { bottom: calc(76px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-tema] .menu, html[data-tema] .menu * { transition: none !important; }
+}
